@@ -13,6 +13,7 @@
     "@react-navigation/bottom-tabs": "^6.6.1",
     "@react-navigation/material-bottom-tabs": "^6.2.29",
     "@react-navigation/native": "^6.1.18",
+    "@react-navigation/native-stack": "^6.11.0",
     "react": "18.3.1",
     "react-native": "0.75.4",
     "react-native-gesture-handler": "^2.20.2",
