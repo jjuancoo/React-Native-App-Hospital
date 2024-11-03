@@ -8,6 +8,10 @@ import Splash from './views/layout/Splash';
 import Home from './views/home/Home';
 import Citas from './views/home/Citas';
 
+//Auth
+import SignIn from './views/auth/SignIn';
+import SignUp from './views/auth/SignUp';
+
 const Tab = createMaterialBottomTabNavigator()
 const Stack = createNativeStackNavigator();
 
@@ -29,10 +33,12 @@ function App(): React.JSX.Element {
           <Stack.Navigator screenOptions={{headerShown: false}}>
             <Stack.Screen name="Splash" component={Splash} />
           </Stack.Navigator>
-        ) : <Tab.Navigator initialRouteName="Home">
-          <Tab.Screen name="Home" component={Home} />
-          <Tab.Screen name="Citas" component={Citas} />
-        </Tab.Navigator>}
+        ) : 
+          <Stack.Navigator>
+            <Stack.Screen name='Register' component={SignUp}/>
+            <Stack.Screen name='Login' component={SignIn}/>
+          </Stack.Navigator>
+        }
       </NavigationContainer>
     </Provider>
   );
