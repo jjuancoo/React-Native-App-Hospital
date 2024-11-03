@@ -9,6 +9,7 @@ import Home from './views/home/Home';
 import Citas from './views/home/Citas';
 
 //Auth
+import Welcome from './views/auth/Welcome';
 import SignIn from './views/auth/SignIn';
 import SignUp from './views/auth/SignUp';
 
@@ -35,8 +36,9 @@ function App(): React.JSX.Element {
           </Stack.Navigator>
         ) : 
           <Stack.Navigator screenOptions={{headerShown: false}}>
-            <Stack.Screen name='Register' component={SignUp}/>
+            <Stack.Screen name='Welcome' component={Welcome}/>
             <Stack.Screen name='Login' component={SignIn}/>
+            <Stack.Screen name='Register' component={SignUp}/>
           </Stack.Navigator>
         }
       </NavigationContainer>
