@@ -34,7 +34,7 @@ function App(): React.JSX.Element {
             <Stack.Screen name="Splash" component={Splash} />
           </Stack.Navigator>
         ) : 
-          <Stack.Navigator>
+          <Stack.Navigator screenOptions={{headerShown: false}}>
             <Stack.Screen name='Register' component={SignUp}/>
             <Stack.Screen name='Login' component={SignIn}/>
           </Stack.Navigator>
