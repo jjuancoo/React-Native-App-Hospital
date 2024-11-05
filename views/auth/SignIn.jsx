@@ -11,10 +11,13 @@ const SignIn = () => {
   const [alert, setAlert] = useState(false)
 
   //Validacion
-  const validateInputs = () => {
-    if (email.trim() === '' || password.trim() === '') {
+  const authenticateUser = () => {
+    if (email === '' || password === '') {
       setAlert(true)
+      return;
     }
+    const user = { email, password }
+    console.log(user)
   }
 
   return (
@@ -27,7 +30,7 @@ const SignIn = () => {
         label='Correo electrónico'
         style={styles.textInput}
         placeholder='Tu correo'
-        onChange={value => setEmail(value)}
+        onChangeText={value => setEmail(value)}
       />
 
       <TextInput
@@ -35,13 +38,13 @@ const SignIn = () => {
         label='Contraseña'
         style={styles.textInput}
         placeholder='**********'
-        onChange={value => setPassword(value)}
+        onChangeText={value => setPassword(value)}
       />
 
       <Button
         mode="elevated"
         style={styles.button}
-        onPress={() => {validateInputs()}}>
+        onPress={() => {authenticateUser()}}>
         Ingresar
       </Button>
 
