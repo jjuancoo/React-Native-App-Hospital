@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { View, StyleSheet } from 'react-native'
 import { Text, TextInput, Button, Dialog, Portal } from 'react-native-paper'
 import axios from 'axios'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const SignIn = () => {
 
@@ -26,7 +27,11 @@ const SignIn = () => {
       const url = 'https://privilegecare-deploy-gqmt.onrender.com/login/'
       await axios.post(url, user).then((response) => {
         const token = response.data
-        console.log(token);
+        console.log(typeof token);
+        //Almacenar los datos en el storage
+        AsyncStorage.setItem('token', token).then((response) => {
+          console.log('Token almacenado correctamente')
+        })
       })
       .catch(function (error) {
         console.log('Este es el: ', error);
