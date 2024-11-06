@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { View, StyleSheet } from 'react-native'
 import { Text, TextInput, Button, Dialog, Portal } from 'react-native-paper'
+import axios from 'axios'
 
 const SignIn = () => {
 
@@ -13,13 +14,26 @@ const SignIn = () => {
   const [alert, setAlert] = useState(false)
 
   //Validacion
-  const authenticateUser = () => {
-    if (Nombre_Usuario === '' || Correo_Electronico === '' || Contrasena === '' || Numero_Telefono_Movilla === '') {
+  const authenticateUser = async () => {
+    if (Nombre_Usuario === '' || Correo_Electronico === '' || Contrasena === '' || Numero_Telefono_Movil === '') {
       setAlert(true)
       return;
     }
+    //Alamcena el usuario
     const user = { Nombre_Usuario,  Contrasena, Numero_Telefono_Movil, Correo_Electronico}
-    console.log(user)
+    
+    try {
+      const url = 'https://privilegecare-deploy-gqmt.onrender.com/login/'
+      await axios.post(url, user).then((response) => {
+        const token = response.data
+        console.log(token);
+      })
+      .catch(function (error) {
+        console.log('Este es el: ', error);
+      });
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return (
