@@ -4,19 +4,21 @@ import { Text, TextInput, Button, Dialog, Portal } from 'react-native-paper'
 
 const SignIn = () => {
 
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [Nombre_Usuario, setNombre_Usuario] = useState('')
+  const [Correo_Electronico, setCorreo_Electronico] = useState('')
+  const [Contrasena, setContrasena] = useState('')
+  const [Numero_Telefono_Movil, setNumero_Telefono_Movil] = useState('')
 
   //Mostrar el dialog
   const [alert, setAlert] = useState(false)
 
   //Validacion
   const authenticateUser = () => {
-    if (email === '' || password === '') {
+    if (Nombre_Usuario === '' || Correo_Electronico === '' || Contrasena === '' || Numero_Telefono_Movilla === '') {
       setAlert(true)
       return;
     }
-    const user = { email, password }
+    const user = { Nombre_Usuario,  Contrasena, Numero_Telefono_Movil, Correo_Electronico}
     console.log(user)
   }
 
@@ -27,10 +29,18 @@ const SignIn = () => {
 
       <TextInput
         mode='outlined'
+        label='Nombre de usuario'
+        style={styles.textInput}
+        placeholder='Tu usuario'
+        onChangeText={value => setNombre_Usuario(value)}
+      />
+
+      <TextInput
+        mode='outlined'
         label='Correo electrónico'
         style={styles.textInput}
         placeholder='Tu correo'
-        onChangeText={value => setEmail(value)}
+        onChangeText={value => setCorreo_Electronico(value)}
       />
 
       <TextInput
@@ -38,7 +48,15 @@ const SignIn = () => {
         label='Contraseña'
         style={styles.textInput}
         placeholder='**********'
-        onChangeText={value => setPassword(value)}
+        onChangeText={value => setContrasena(value)}
+      />
+
+      <TextInput
+        mode='outlined'
+        label='Telefono'
+        style={styles.textInput}
+        placeholder='Tu numero'
+        onChangeText={value => setNumero_Telefono_Movil(value)}
       />
 
       <Button
