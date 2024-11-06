@@ -3,7 +3,6 @@ import { View, StyleSheet } from 'react-native'
 import { Text, TextInput, Button, Dialog, Portal } from 'react-native-paper'
 import axios from 'axios'
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import { isSearchBarAvailableForCurrentPlatform } from 'react-native-screens'
 
 const SignIn = () => {
 
@@ -25,19 +24,23 @@ const SignIn = () => {
     const user = { Nombre_Usuario,  Contrasena, Numero_Telefono_Movil, Correo_Electronico}
     
     try {
-      const url = 'https://privilegecare-deploy-gqmt.onrender.com/login/'
-      await axios.post(url, user).then((response) => {
-        const token = response.data
-        console.log(token);
-        //Almacenar los datos en el storage
-        AsyncStorage.setItem('token', token).then((response) => {
-          console.log('Token almacenado correctamente')
+      const url = 'https://privilegecare-deploy-gqmt.onrender.com/login/';
+      await axios
+        .post(url, user)
+        .then(response => {
+          const token = response.data;
+          console.log(token);
+          //Almacenar los datos en el storage
+          AsyncStorage.setItem('token', token).then(response => {
+            console.log('Token almacenado correctamente');
+          });
+          AsyncStorage.setItem('correo', Correo_Electronico).then(response => {
+            console.log('Correo correctamente almacenado');
+          });
         })
-        AsyncStorage.setItem('correo', Correo_Electronico).then((response) => {console.log('Correo correctamente almacenado')})
-      })
-      .catch(function (error) {
-        console.log('Este es el: ', error);
-      });
+        .catch(function (error) {
+          console.log('Este es el: ', error);
+        });
 
       // setTimeout(() => {
       //   AsyncStorage.clear().then(() => {console.log('Se vacion el async')})
