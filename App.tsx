@@ -8,6 +8,7 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import Splash from './views/layout/Splash';
 import Home from './views/home/Home';
 import Citas from './views/home/Citas';
+import Calendario from './views/home/Calendario';
 
 //Auth
 import Welcome from './views/auth/Welcome';
@@ -32,6 +33,7 @@ const AppTabs = () => {
     <Tab.Navigator>
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Citas" component={Citas} />
+      <Tab.Screen name="Calendario" component={Calendario} />
     </Tab.Navigator>
   )
 };
