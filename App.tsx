@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -31,9 +32,48 @@ const AuthStack = () => {
 const AppTabs = () => {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Citas" component={Citas} />
-      <Tab.Screen name="Calendario" component={Calendario} />
+      <Tab.Screen name="Inicio" component={Home} options={{
+        tabBarIcon: ({ focused }) => (
+          <Image
+            source={
+              focused ?
+                require('./src/icons/homeNegro.png') :
+                require('./src/icons/home.png')
+            }
+            style={{
+              height: 22, width: 22
+            }}
+          />
+        )
+      }} />
+      <Tab.Screen name="Citas" component={Citas}   options={{
+        tabBarIcon: ({ focused }) => (
+          <Image
+            source={
+              focused ?
+                require('./src/icons/citaNegro.png') :
+                require('./src/icons/cita.png')
+            }
+            style={{
+              height: 22, width: 22
+            }}
+          />
+        )
+      }}/>
+      <Tab.Screen name="Calendario" component={Calendario}  options={{
+        tabBarIcon: ({ focused }) => (
+          <Image
+            source={
+              focused ?
+                require('./src/icons/calendariosNegro.png') :
+                require('./src/icons/calendarios.png')
+            }
+            style={{
+              height: 22, width: 22
+            }}
+          />
+        )
+      }} />
     </Tab.Navigator>
   )
 };
