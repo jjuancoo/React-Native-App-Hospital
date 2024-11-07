@@ -3,6 +3,7 @@ import { View, StyleSheet } from 'react-native'
 import { Text, TextInput, Button, Dialog, Portal } from 'react-native-paper'
 import axios from 'axios'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import { useAuth } from '../../context/AuthContext'
 
 const SignIn = () => {
 
@@ -10,6 +11,7 @@ const SignIn = () => {
   const [Correo_Electronico, setCorreo_Electronico] = useState('')
   const [Contrasena, setContrasena] = useState('')
   const [Numero_Telefono_Movil, setNumero_Telefono_Movil] = useState('')
+  const {signIn} = useAuth()
 
   //Mostrar el dialog
   const [alert, setAlert] = useState(false)
@@ -31,12 +33,12 @@ const SignIn = () => {
           const token = response.data;
           console.log(token);
           //Almacenar los datos en el storage
-          AsyncStorage.setItem('token', token).then(response => {
-            console.log('Token almacenado correctamente');
-          });
-          AsyncStorage.setItem('correo', Correo_Electronico).then(response => {
-            console.log('Correo correctamente almacenado');
-          });
+          // Almacenar el token y el correo en AsyncStorage
+          AsyncStorage.setItem('token', token);
+          AsyncStorage.setItem('correo', Correo_Electronico);
+          console.log('Token y correo almacenados correctamente');
+
+          signIn();
         })
         .catch(function (error) {
           console.log('Este es el: ', error);
