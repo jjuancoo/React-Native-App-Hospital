@@ -10,6 +10,7 @@ import Splash from './views/layout/Splash';
 import Home from './views/home/Home';
 import Citas from './views/home/Citas';
 import Calendario from './views/home/Calendario';
+import Configuracion from './views/home/Configuracion';
 
 //Auth
 import Welcome from './views/auth/Welcome';
@@ -67,6 +68,20 @@ const AppTabs = () => {
               focused ?
                 require('./src/icons/calendariosNegro.png') :
                 require('./src/icons/calendarios.png')
+            }
+            style={{
+              height: 22, width: 22
+            }}
+          />
+        )
+      }} />
+      <Tab.Screen name="Configuracion" component={Configuracion}  options={{
+        tabBarIcon: ({ focused }) => (
+          <Image
+            source={
+              focused ?
+                require('./src/icons/configuracionNegro.png') :
+                require('./src/icons/configuracion.png')
             }
             style={{
               height: 22, width: 22
