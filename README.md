@@ -1,11 +1,11 @@
-# 🩻 Proyecto de Radiología e Imagen
+#  Proyecto de Radiología e Imagen
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8" />
 <center><a href="https://imgbb.com/"><img src="https://i.ibb.co/VMfcb2z/minecode-removebg-preview.png" alt="500px" border="500px" /></a><center>
-    <center><a href="https://imgbb.com/"><img src="https://i.ibb.co/2SZLMG4/radiologiaeimagen-icon.png" alt="100px" border="100px"></a><center>
+    <center><a href="https://ibb.co/w7cbQ5m"><img src="https://i.ibb.co/w7cbQ5m/radiologiaeimagen-icon.png" alt="radiologiaeimagen-icon" border="0"></a></a><center>
 </head>
 <body>  
     <h1>MineCode Empresa de Software</h1>
