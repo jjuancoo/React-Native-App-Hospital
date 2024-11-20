@@ -1,38 +1,36 @@
 import React, {useState, useEffect} from 'react'
 import { View, ScrollView, StyleSheet } from 'react-native'
 import { Text } from 'react-native-paper'
-import axios from 'axios'
-import AsyncStorage from '@react-native-async-storage/async-storage'
+import useAxios from '../../api/estudios.api'
 
 const Citas = () => {
 
-  const [studios, setStudios] = useState([])
-  const [consultarAPI, setConsultarAPI] = useState(true)
+  const [studios, setStudios] = useState([]);
+  const axiosInstance = useAxios();
 
-  useEffect(() =>{
-    const getStudios = async () => {
+  useEffect(() => {
+    const fetchStudios = async () => {
       try {
-        const url = 'https://privilegecare-deploy-gqmt.onrender.com/estudios';
-        const result = await axios.get(url);
-        const token = AsyncStorage.getItem('token', 'jjj')
-        console.log(token)
-        setConsultarAPI(false);
-        setStudios(result.data);
-        console.log('Se consulta a la api')
-        console.log(result.data);
+        const response = await axiosInstance.get('/estudios');
+        setStudios(response.data);
+        console.log(response.data);
       } catch (error) {
-        console.log(error);
+        console.error('Error fetching estudios:', error);
       }
     };
-    if(consultarAPI){
-      getStudios()
-    }
-  }, [setConsultarAPI]);
 
+    fetchStudios();
+  }, []);
+  
   return (
     <ScrollView>
         <View>
           <Text style={styles.title}>Estudios</Text>
+          <View>
+            {studios.map((studio) => (
+              <Text key={studio.id}>{studio.nombre}</Text>
+            ))}
+          </View>
         </View>
     </ScrollView>
   )
