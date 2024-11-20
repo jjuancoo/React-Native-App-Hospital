@@ -23,7 +23,7 @@ const SignIn = () => {
       return;
     }
     //Alamcena el usuario
-    const user = { Nombre_Usuario,  Contrasena, Numero_Telefono_Movil, Correo_Electronico}
+    const user = { Nombre_Usuario, Contrasena, Numero_Telefono_Movil, Correo_Electronico}
     
     try {
       const url = 'https://privilegecare-deploy-gqmt.onrender.com/login/';
@@ -38,7 +38,7 @@ const SignIn = () => {
           AsyncStorage.setItem('correo', Correo_Electronico);
           console.log('Token y correo almacenados correctamente');
 
-          signIn();
+          signIn(token);
         })
         .catch(function (error) {
           console.log('Este es el: ', error);
