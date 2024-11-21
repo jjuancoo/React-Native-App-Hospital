@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { View, ScrollView, StyleSheet } from 'react-native'
+import { View, ScrollView, StyleSheet, Image } from 'react-native'
 import { Text } from 'react-native-paper'
 import useAxios from '../../api/estudios.api'
 
@@ -17,12 +17,7 @@ const ResultadosEstudios = () => {
                 console.error(error)
             }
         }
-        getStudies()
-        // Cleanup function
-        return () => {
-            // Cancel the API request
-            axiosInstance.cancel('API request canceled')
-        }
+        getStudies();
     }, [])
 
   return (
@@ -31,9 +26,13 @@ const ResultadosEstudios = () => {
           <Text style={styles.title}>Resultados de estudios</Text>
           <View>
             {resultStudies.length == 0 ? (
-                <>
-                    <Text>No hay resultados aún</Text>
-                </>
+                <View>
+                    <Image
+                        source={require('../../src/img/no_data.png')}
+                        style={styles.image}
+                    />
+                    <Text style={styles.favorite}>No hay resultados aún</Text>
+                </View>
             ) : (
                 resultStudies.map((result) => {
                     <>
@@ -48,30 +47,35 @@ const ResultadosEstudios = () => {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,    
-    },
-    scroll: {
-        marginHorizontal: 10
-    },
-    title: {
-        fontSize: 26,
-        fontWeight: 'bold',
-        marginBottom: 8,
-        padding: 8
-    },
-    titleCard: {
-      fontSize: 18,
-      fontWeight: 'bold',
-      marginBottom: 4,
-      padding: 4,
-    },
-    fab: {
-      position: 'absolute',
-      margin: 16,
-      right: 0,
-      bottom: 0,
-    },
-  });
+  container: {
+    flex: 1,
+  },
+  scroll: {
+    marginHorizontal: 10,
+  },
+  title: {
+    fontSize: 26,
+    fontWeight: 'bold',
+    marginBottom: 8,
+    padding: 8,
+  },
+  titleCard: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 4,
+    padding: 4,
+  },
+  image: {
+    width: 250,
+    height: 250,
+    marginBottom: 20,
+    resizeMode: 'contain',
+    alignSelf: 'center',
+  },
+  favorite: {
+    textAlign: 'center',
+    fontSize: 20,
+  },
+});
 
 export default ResultadosEstudios
