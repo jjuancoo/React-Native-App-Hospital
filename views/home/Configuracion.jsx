@@ -24,7 +24,22 @@ const Configuracion = () => {
       <ScrollView style={styles.scroll}>
         <Text style={styles.title}>Configuración</Text>
 
+        <View style={{marginBottom: 12, padding: 12}}>
+          <Text style={styles.subtitle}>Pefil</Text>
+          <Button>
+            Editar Perfil
+          </Button>
+          <Button>
+            Cambiar Contraseña
+          </Button>
+          <Button>
+            Seguridad y Privacidad
+          </Button>
+          
+        </View>
+
         <View>
+          <Text style={styles.subtitle}>Cuenta</Text>
           <Button mode="outlined" onPress={cerrarSesion}>
             Cerrar Sesión
           </Button>
@@ -71,6 +86,11 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 8,
         padding: 10
+    },
+    subtitle: {
+      fontSize: 18,
+      fontWeight: '800',
+      marginBottom: 12
     },
     buttonExit: {
         marginHorizontal: 10
