@@ -46,8 +46,8 @@ const Citas = () => {
         </View>
       </ScrollView>
       <FAB
+        icon={'plus'}
         style={styles.fab}
-        icon="plus"
         label='Nuevo Estudio'
         onPress={() => console.log('Pressed')}
       />
