@@ -2,12 +2,12 @@ import React from 'react'
 import { View } from 'react-native'
 import { Text } from 'react-native-paper'
 
-const Calendario = () => {
+const ResultadosEstudios = () => {
   return (
     <View>
-        <Text>Desde calendario</Text>
+        <Text>Desde resultados estudios</Text>
     </View>
   )
 }
 
-export default Calendario
+export default ResultadosEstudios

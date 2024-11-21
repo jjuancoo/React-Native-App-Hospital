@@ -9,7 +9,7 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import Splash from './views/layout/Splash';
 import Home from './views/home/Home';
 import Citas from './views/home/Citas';
-import Calendario from './views/home/Calendario';
+import ResultadosEstudios from './views/home/ResultadosEstudios';
 import Configuracion from './views/home/Configuracion';
 
 //Auth
@@ -61,7 +61,7 @@ const AppTabs = () => {
           />
         )
       }}/>
-      <Tab.Screen name="Calendario" component={Calendario}  options={{
+      <Tab.Screen name="Resultados" component={ResultadosEstudios}  options={{
         tabBarIcon: ({ focused }) => (
           <Image
             source={
