@@ -1,12 +1,47 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { View, ScrollView, StyleSheet } from 'react-native'
 import { Text } from 'react-native-paper'
+import useAxios from '../../api/estudios.api'
 
 const ResultadosEstudios = () => {
+
+    const [resultStudies, setResultStudies] = useState([])
+    const axiosInstance = useAxios()
+
+    useEffect(() =>{
+        const getStudies = async () => {
+            try {
+                const response = await axiosInstance.get('/estudios')
+                setResultStudies(response.data)
+            } catch (error) {
+                console.error(error)
+            }
+        }
+        getStudies()
+        // Cleanup function
+        return () => {
+            // Cancel the API request
+            axiosInstance.cancel('API request canceled')
+        }
+    }, [])
+
   return (
     <View style={styles.container}>
         <ScrollView style={styles.scroll}>
           <Text style={styles.title}>Resultados de estudios</Text>
+          <View>
+            {resultStudies.length == 0 ? (
+                <>
+                    <Text>No hay resultados aún</Text>
+                </>
+            ) : (
+                resultStudies.map((result) => {
+                    <>
+                        <Text key={result.id}>{result.Resultado}</Text>
+                    </>
+                })
+            )}
+          </View>
         </ScrollView>
     </View>
   )
