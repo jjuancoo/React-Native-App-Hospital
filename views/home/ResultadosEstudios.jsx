@@ -11,7 +11,7 @@ const ResultadosEstudios = () => {
     useEffect(() =>{
         const getStudies = async () => {
             try {
-                const response = await axiosInstance.get('/estudios')
+                const response = await axiosInstance.get('/resultados_estudios')
                 setResultStudies(response.data)
             } catch (error) {
                 console.error(error)
@@ -34,11 +34,11 @@ const ResultadosEstudios = () => {
                     <Text style={styles.favorite}>No hay resultados aún</Text>
                 </View>
             ) : (
-                resultStudies.map((result) => {
+                resultStudies.map((result) => (
                     <>
-                        <Text key={result.id}>{result.Resultado}</Text>
+                        <Text key={result.id}>{result.Resultados}</Text>
                     </>
-                })
+                ))
             )}
           </View>
         </ScrollView>
