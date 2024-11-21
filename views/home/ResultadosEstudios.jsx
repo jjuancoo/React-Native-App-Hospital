@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { View, ScrollView, StyleSheet, Image } from 'react-native'
-import { Text } from 'react-native-paper'
+import { Text, Card, FAB, ActivityIndicator } from 'react-native-paper'
 import useAxios from '../../api/estudios.api'
 
 const ResultadosEstudios = () => {
@@ -31,17 +31,27 @@ const ResultadosEstudios = () => {
                         source={require('../../src/img/no_data.png')}
                         style={styles.image}
                     />
-                    <Text style={styles.favorite}>No hay resultados aún</Text>
+                    <ActivityIndicator
+                      animating={true}
+                      style={{marginBottom: 12}}
+                    />
+                    <Text style={styles.favorite}>Se estan cargando los resultados...</Text>
                 </View>
             ) : (
                 resultStudies.map((result) => (
-                    <>
-                        <Text key={result.id}>{result.Resultados}</Text>
-                    </>
+                    <View key={result.id}>
+                        <Text>{result.Resultados}</Text>
+                    </View>
                 ))
             )}
           </View>
         </ScrollView>
+        <FAB
+          icon="plus"
+          style={styles.fab}
+          label='Nuevo Resultado'
+          onPress={() => console.log('Pressed')}
+        />
     </View>
   )
 }
@@ -75,6 +85,12 @@ const styles = StyleSheet.create({
   favorite: {
     textAlign: 'center',
     fontSize: 20,
+  },
+  fab: {
+    position: 'absolute',
+    margin: 16,
+    right: 0,
+    bottom: 0,
   },
 });
 
