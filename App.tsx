@@ -47,7 +47,7 @@ const AppTabs = () => {
           />
         )
       }} />
-      <Tab.Screen name="Citas" component={Citas}   options={{
+      <Tab.Screen name="Estudios" component={Citas}   options={{
         tabBarIcon: ({ focused }) => (
           <Image
             source={
