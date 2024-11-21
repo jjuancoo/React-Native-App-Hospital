@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { View, ScrollView, StyleSheet } from 'react-native'
-import { Text } from 'react-native-paper'
+import { Text, Card, FAB } from 'react-native-paper'
 import useAxios from '../../api/estudios.api'
 
 const Citas = () => {
@@ -23,17 +23,36 @@ const Citas = () => {
   }, []);
   
   return (
-    <ScrollView>
+    <View>
+      <ScrollView style={styles.scroll}>
         <View>
           <Text style={styles.title}>Estudios</Text>
           <View>
-            {studios.map((studio) => (
-              <Text key={studio.id}>{studio.nombre}</Text>
+            {studios.map(studio => (
+              <View style={{marginVertical: 6, padding: 2}} key={studio.id}>
+                <Card>
+                  <Card.Content>
+                    <Text style={styles.titleCard}>{studio.Tipo}</Text>
+                    <Text>Estado: {studio.Estatus}</Text>
+                    <Text>Costo: {studio.Total_Costo}</Text>
+                    <Text>Dirigido a: {studio.Dirigido_A}</Text>
+                    <Text>Observaciones: {studio.Observaciones}</Text>
+                    <Text>Creada: {studio.Fecha_Registro}</Text>
+                  </Card.Content>
+                </Card>
+              </View>
             ))}
           </View>
         </View>
-    </ScrollView>
-  )
+      </ScrollView>
+      <FAB
+        style={styles.fab}
+        icon="plus"
+        label='Nuevo Estudio'
+        onPress={() => console.log('Pressed')}
+      />
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
@@ -47,11 +66,20 @@ const styles = StyleSheet.create({
       fontSize: 26,
       fontWeight: 'bold',
       marginBottom: 8,
-      padding: 10
+      padding: 8
   },
-  buttonExit: {
-      marginHorizontal: 10
-  }
+  titleCard: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 4,
+    padding: 4,
+  },
+  fab: {
+    position: 'absolute',
+    margin: 16,
+    right: 0,
+    bottom: 0,
+  },
 });
 
 export default Citas
