@@ -11,7 +11,7 @@
 </head>
 <body>  
     <h1>MineCode Empresa de Software</h1>
-    <center> <a href="https://ibb.co/LJr52s3"><img src="https://i.ibb.co/mX08MP3/Captura-de-pantalla-2024-04-18-101358.png" alt="100px" border="0" /></a><center>
+    <center> <a href="https://ibb.co/qk26yJ6"><img src="https://i.ibb.co/f4TJ1DJ/White-and-Blue-Minimalist-Organizational-Chart-Graph-1.png" alt="White-and-Blue-Minimalist-Organizational-Chart-Graph-1" border="0"></a></a><center>
 
 
 ## 📚 Descripción del Proyecto
