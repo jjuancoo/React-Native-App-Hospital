@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    Diseñeada para arreglar problemas
+    Diseñeada para solucionar problemas relacionadas al area de Tecnologias de la Información 
     <meta charset="UTF-8" />
 <center><a href="https://imgbb.com/"><img src="https://i.ibb.co/VMfcb2z/minecode-removebg-preview.png" alt="500px" border="500px" /></a><center>
     <br><br>
