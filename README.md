@@ -7,6 +7,25 @@
     <br><br>
     Diseñeada para solucionar problemas relacionadas al area de Tecnologias de la Información 
 
+    
+## LOGO RADIOLOGIA E IMAGEN APLICACION
+<head>
+    <center><a href="https://imgbb.com/"><img src="https://i.ibb.co/pR9NFTG/Imagen3-removebg-preview.png" alt="Imagen3-removebg-preview" border="0"></a></a></a><center>
+</head>
+<body>  
+    <h1>MineCode Empresa de Software</h1>
+    <center> <a href="https://ibb.co/qk26yJ6"><img src="https://i.ibb.co/f4TJ1DJ/White-and-Blue-Minimalist-Organizational-Chart-Graph-1.png" alt="White-and-Blue-Minimalist-Organizational-Chart-Graph-1" border="0"></a></a><center>
+
+## 👥 Colaboradores
+
+- **📄 Alexis Gomez Gaona** - *Documentador*
+- **💻 Armando Carrasco Vargas** - *Front End*
+- **🖥️ Juan Manuel Cruz Ortiz** - *Back End*
+- **📝 Janeth Ahuacatitla Amixtlan** - *Documentación*
+
+---
+
+
 
 ## 📚 Descripción del Proyecto
 
@@ -33,23 +52,6 @@ Desarrollar una aplicación móvil integral en React Native que mejore la gesti�
             <li>Garantizar la privacidad y seguridad de la información médica, cumpliendo con las regulaciones y estándares de protección de datos.</li>
             <li>Proporcionar una interfaz de usuario intuitiva y amigable, que permita una fácil navegación y uso del sistema por parte del personal médico.</li>
         </ul>
-
-## LOGO RADIOLOGIA E IMAGEN APLICACION
-<head>
-    <center><a href="https://imgbb.com/"><img src="https://i.ibb.co/pR9NFTG/Imagen3-removebg-preview.png" alt="Imagen3-removebg-preview" border="0"></a></a></a><center>
-</head>
-<body>  
-    <h1>MineCode Empresa de Software</h1>
-    <center> <a href="https://ibb.co/qk26yJ6"><img src="https://i.ibb.co/f4TJ1DJ/White-and-Blue-Minimalist-Organizational-Chart-Graph-1.png" alt="White-and-Blue-Minimalist-Organizational-Chart-Graph-1" border="0"></a></a><center>
-
-## 👥 Colaboradores
-
-- **📄 Alexis Gomez Gaona** - *Documentador*
-- **💻 Armando Carrasco Vargas** - *Front End*
-- **🖥️ Juan Manuel Cruz Ortiz** - *Back End*
-- **📝 Janeth Ahuacatitla Amixtlan** - *Documentación*
-
----
 
 ## 🚀 Instalación y Uso
 
