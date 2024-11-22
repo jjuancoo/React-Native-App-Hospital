@@ -24,7 +24,7 @@ Desarrollar una **plataforma integral** que optimice la gestión y visualizació
 - 
 ## LOGO RADIOLOGIA E IMAGEN APLICACION
 <head>
-    <center><a href="https://imgbb.com/"><img src="https://i.ibb.co/F52RbNc/loog.jpg" alt="loog" border="0"></a></a><center>
+    <center><a href="https://imgbb.com/"><img src="https://i.ibb.co/pR9NFTG/Imagen3-removebg-preview.png" alt="Imagen3-removebg-preview" border="0"></a></a></a><center>
 </head>
 <body>  
     <h1>MineCode Empresa de Software</h1>
