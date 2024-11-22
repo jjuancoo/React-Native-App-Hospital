@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8" />
 <center><a href="https://imgbb.com/"><img src="https://i.ibb.co/VMfcb2z/minecode-removebg-preview.png" alt="500px" border="500px" /></a><center>
-    <br><br><br><br><br>
+    <br><br><br>
 
 ## 📚 Descripción del Proyecto
 
@@ -22,8 +22,7 @@ Desarrollar una **plataforma integral** que optimice la gestión y visualizació
 - **Facilitar** la colaboración entre profesionales de la salud mediante herramientas de anotación.
 - **Optimizar** la visualización de imágenes con herramientas avanzadas.
 - **Mejorar** la accesibilidad a los estudios para los pacientes desde cualquier lugar.
--
-        <h1>LOGO RADIOLOGIA E IMAGEN</h1>
+## LOGO RADIOLOGIA E IMAGEN
     <center><a href="https://ibb.co/w7cbQ5m"><img src="https://i.ibb.co/w7cbQ5m/radiologiaeimagen-icon.png" alt="radiologiaeimagen-icon" border="0"></a></a><center>
 </head>
 <body>  
