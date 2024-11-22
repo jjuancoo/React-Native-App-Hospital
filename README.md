@@ -5,14 +5,7 @@
 <head>
     <meta charset="UTF-8" />
 <center><a href="https://imgbb.com/"><img src="https://i.ibb.co/VMfcb2z/minecode-removebg-preview.png" alt="500px" border="500px" /></a><center>
-    <br><br><br><br><br><br>
-        <h1>LOGO RADIOLOGIA E IMAGEN</h1>
-    <center><a href="https://ibb.co/w7cbQ5m"><img src="https://i.ibb.co/w7cbQ5m/radiologiaeimagen-icon.png" alt="radiologiaeimagen-icon" border="0"></a></a><center>
-</head>
-<body>  
-    <h1>MineCode Empresa de Software</h1>
-    <center> <a href="https://ibb.co/qk26yJ6"><img src="https://i.ibb.co/f4TJ1DJ/White-and-Blue-Minimalist-Organizational-Chart-Graph-1.png" alt="White-and-Blue-Minimalist-Organizational-Chart-Graph-1" border="0"></a></a><center>
-
+    <br><br><br><br><br>
 
 ## 📚 Descripción del Proyecto
 
@@ -29,8 +22,15 @@ Desarrollar una **plataforma integral** que optimice la gestión y visualizació
 - **Facilitar** la colaboración entre profesionales de la salud mediante herramientas de anotación.
 - **Optimizar** la visualización de imágenes con herramientas avanzadas.
 - **Mejorar** la accesibilidad a los estudios para los pacientes desde cualquier lugar.
+-
+        <h1>LOGO RADIOLOGIA E IMAGEN</h1>
+    <center><a href="https://ibb.co/w7cbQ5m"><img src="https://i.ibb.co/w7cbQ5m/radiologiaeimagen-icon.png" alt="radiologiaeimagen-icon" border="0"></a></a><center>
+</head>
+<body>  
+    <h1>MineCode Empresa de Software</h1>
+    <center> <a href="https://ibb.co/qk26yJ6"><img src="https://i.ibb.co/f4TJ1DJ/White-and-Blue-Minimalist-Organizational-Chart-Graph-1.png" alt="White-and-Blue-Minimalist-Organizational-Chart-Graph-1" border="0"></a></a><center>
 
----
+
 
   <h2>Información Adicional</h2>
         <p>Además de los objetivos mencionados, el proyecto también tiene como metas:</p>
