@@ -8,31 +8,22 @@
 
 ## 📚 Descripción del Proyecto
 
-Este proyecto está dedicado a la creación de una **plataforma avanzada** para la gestión y visualización de estudios de radiología e imagen médica. Nuestra misión es mejorar la precisión y eficiencia en el diagnóstico médico, proporcionando herramientas intuitivas y potentes para profesionales de la salud y pacientes.
+Este proyecto se centra en el desarrollo de una aplicación innovadora diseñada para facilitar la gestión y visualización de estudios de radiología e imágenes médicas. Nuestro objetivo es optimizar la organización, y la eficiencia en los diagnósticos, ofreciendo herramientas intuitivas y funcionales tanto para profesionales de la salud como para pacientes.
 
 
 ## 🎯 Objetivos del Proyecto
 
 ### Objetivo General
-Desarrollar una **plataforma integral** que optimice la gestión y visualización de imágenes médicas, potenciando la precisión diagnóstica.
+Desarrollar una aplicación móvil integral en React Native que mejore la gestión y visualización de imágenes médicas, fortaleciendo organización y la experiencia del usuario.
 
 ### Objetivos Específicos
-- **Automatizar** el almacenamiento y recuperación de estudios de imagen médica.
-- **Facilitar** la colaboración entre profesionales de la salud mediante herramientas de anotación.
+- **Implementar una solución** que automatice el almacenamiento y recuperación de estudios de imagen médica mediante una interfaz amigable.
+- **Facilitar** la colaboración entre profesionales de la salud mediante herramientas interactivas, como anotaciones y comentarios en tiempo real.
 - **Optimizar** la visualización de imágenes con herramientas avanzadas.
 - **Mejorar** la accesibilidad a los estudios para los pacientes desde cualquier lugar.
-- 
-## LOGO RADIOLOGIA E IMAGEN APLICACION
-<head>
-    <center><a href="https://imgbb.com/"><img src="https://i.ibb.co/pR9NFTG/Imagen3-removebg-preview.png" alt="Imagen3-removebg-preview" border="0"></a></a></a><center>
-</head>
-<body>  
-    <h1>MineCode Empresa de Software</h1>
-    <center> <a href="https://ibb.co/qk26yJ6"><img src="https://i.ibb.co/f4TJ1DJ/White-and-Blue-Minimalist-Organizational-Chart-Graph-1.png" alt="White-and-Blue-Minimalist-Organizational-Chart-Graph-1" border="0"></a></a><center>
+- **Garantizar el acceso seguro**  y ágil a los estudios médicos para pacientes y médicos desde cualquier dispositivo móvil.
 
-
-
-  <h2>Información Adicional</h2>
+    <h2>Información Adicional</h2>
         <p>Además de los objetivos mencionados, el proyecto también tiene como metas:</p>
         <ul>
             <li>Facilitar el acceso rápido y seguro a los estudios radiológicos por parte del personal médico.</li>
@@ -40,6 +31,14 @@ Desarrollar una **plataforma integral** que optimice la gestión y visualizació
             <li>Garantizar la privacidad y seguridad de la información médica, cumpliendo con las regulaciones y estándares de protección de datos.</li>
             <li>Proporcionar una interfaz de usuario intuitiva y amigable, que permita una fácil navegación y uso del sistema por parte del personal médico.</li>
         </ul>
+
+## LOGO RADIOLOGIA E IMAGEN APLICACION
+<head>
+    <center><a href="https://imgbb.com/"><img src="https://i.ibb.co/pR9NFTG/Imagen3-removebg-preview.png" alt="Imagen3-removebg-preview" border="0"></a></a></a><center>
+</head>
+<body>  
+    <h1>MineCode Empresa de Software</h1>
+    <center> <a href="https://ibb.co/qk26yJ6"><img src="https://i.ibb.co/f4TJ1DJ/White-and-Blue-Minimalist-Organizational-Chart-Graph-1.png" alt="White-and-Blue-Minimalist-Organizational-Chart-Graph-1" border="0"></a></a><center>
 
 ## 👥 Colaboradores
 
