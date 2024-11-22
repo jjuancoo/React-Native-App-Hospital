@@ -56,10 +56,9 @@ Desarrollar una aplicación móvil integral en React Native que mejore la gesti�
 ## 🚀 Instalación y Uso
 
 ### Requisitos Previos
-- Node.js
+- React Native
 - JavaScript
-- MYSQL
-- Vue.js
+- Kotlin
 - Git
 
   <h1>Tecnologías utilizadas en el desarrollo del proyecto Radiología e Imagen</h1>
