@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    Diseñeada para arreglar problemas
     <meta charset="UTF-8" />
 <center><a href="https://imgbb.com/"><img src="https://i.ibb.co/VMfcb2z/minecode-removebg-preview.png" alt="500px" border="500px" /></a><center>
     <br><br>
