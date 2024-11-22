@@ -22,9 +22,9 @@ Desarrollar una **plataforma integral** que optimice la gestión y visualizació
 - **Optimizar** la visualización de imágenes con herramientas avanzadas.
 - **Mejorar** la accesibilidad a los estudios para los pacientes desde cualquier lugar.
 - 
-## LOGO RADIOLOGIA E IMAGEN
+## LOGO RADIOLOGIA E IMAGEN APLICACION
 <head>
-    <center><a href="https://imgbb.com/"><img src="https://i.ibb.co/cc4ZfgQ/Captura-de-pantalla-2024-11-21-212851.png" alt="Captura-de-pantalla-2024-11-21-212851" border="0"></a><center>
+    <center><a href="https://imgbb.com/"><img src="https://i.ibb.co/F52RbNc/loog.jpg" alt="loog" border="0"></a></a><center>
 </head>
 <body>  
     <h1>MineCode Empresa de Software</h1>
