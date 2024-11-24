@@ -10,7 +10,7 @@
     
 ## 🎨 LOGO RADIOLOGIA E IMAGEN APLICACION
 <head>
-    <center><a href="https://imgbb.com/"><img src="https://i.ibb.co/THvdF6d/Captura-de-pantalla-2024-11-24-101301-removebg-preview.png" alt="Captura-de-pantalla-2024-11-24-101301-removebg-preview" border="0"></a><br/>
+ 
 </head>
 <body>  
     <h1>MineCode Empresa de Software</h1>
