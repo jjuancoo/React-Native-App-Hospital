@@ -117,7 +117,24 @@ Este Prototipado Interactivo simula cómo funcionará el producto, vinculando la
 <a href="https://ibb.co/Q70ZXDP"><img src="https://i.ibb.co/sp7htWK/Captura-de-pantalla-2024-11-24-115520.png" alt="Captura-de-pantalla-2024-11-24-115520" border="0"></a>
 
 ### ------------------ Desarrollo de Aplicación -------------------------
-Este código es un componente funcional llamado SignIn en React Native que implementa una interfaz para iniciar sesión en una aplicación. Se conecta con un backend usando Axios para autenticación y utiliza almacenamiento local (AsyncStorage) para guardar el token de acceso y otros datos. 
+### ⚕️Bienvenido
+El componente Welcome es una pantalla de bienvenida para una aplicación móvil. Proporciona una introducción básica con una imagen, un mensaje de bienvenida y botones para navegar a las pantallas de inicio de sesión y registro.<br>
+<a href="https://ibb.co/hCMR3SD"><img src="https://i.ibb.co/4JfZhHP/Captura-de-pantalla-2024-11-24-121917.png" alt="Captura-de-pantalla-2024-11-24-121917" border="0"></a><br>
+
+### ⚕️Splash 
+El componente Splash es una pantalla de carga (splash screen) que se muestra cuando la aplicación se inicia, típicamente mientras se cargan datos o se realiza alguna operación de inicialización.<br>
+<a href="https://ibb.co/TrsJ4kx"><img src="https://i.ibb.co/zNzCXrT/Captura-de-pantalla-2024-11-24-122133.png" alt="Captura-de-pantalla-2024-11-24-122133" border="0"></a><br>
+🌐-Estructura del Componente:<br>
+➡️View: Es el contenedor principal que organiza todos los elementos de la pantalla.<br>
+Dentro de View están los siguientes elementos:<br>
+➡️Image: Muestra una imagen (un archivo medicine_ss.png ubicado en la carpeta ../../src/img/), probablemente un logo o una ilustración relacionada con la aplicación.<br>
+➡️ActivityIndicator: Muestra un indicador de carga, que es una animación circular que gira para indicar que la aplicación está realizando una tarea en segundo plano, como la carga de datos. Tiene un tamaño large y un color azul (#0000ff).<br>
+➡️Text: Muestra el texto "Privilege Care" debajo del indicador de carga. Este texto sirve como nombre o marca de la aplicación.<br>
+
+
+
+### ⚕️INICIAR SESION
+Este código es un componente funcional llamado SignIn en React Native que implementa una interfaz para iniciar sesión en una aplicación. Se conecta con un backend usando Axios para autenticación y utiliza almacenamiento local (AsyncStorage) para guardar el token de acceso y otros datos. <br>
 <a href="https://ibb.co/7Stp7pR"><img src="https://i.ibb.co/b65vpv2/Captura-de-pantalla-2024-11-24-120800.png" alt="Captura-de-pantalla-2024-11-24-120800" border="0"></a>
 <br>
 🌐-Importaciones <br>
@@ -139,4 +156,36 @@ Dialog, Portal: Muestra un cuadro de diálogo como alerta.<br>
 --Botón de Iniciar Sesión:<br>
 --Llama a authenticateUser al presionarlo.<br>
 --Cuadro de Diálogo:Muestra un mensaje de error si los campos están vacíos (alert está en true).<br>
+
+
+### ⚕️REGISTRARSE
+Representa una pantalla de registro para crear una nueva cuenta en una aplicación. Es una interfaz básica que incluye campos de entrada para el nombre, correo electrónico y contraseña, junto con un botón de registro. <br>
+<a href="https://ibb.co/rmYrzSt"><img src="https://i.ibb.co/1L1WP5n/Captura-de-pantalla-2024-11-24-121432.png" alt="Captura-de-pantalla-2024-11-24-121432" border="0"></a><br>
+
+🌐-Importaciones <br>
+🟩React y Componentes de React Native:<br>
+View: Contenedor principal de los elementos.<br>
+StyleSheet: Define estilos en línea para la pantalla.<br>
+🟩Componentes de react-native-paper:<br>
+Text: Elementos para mostrar texto.<br>
+TextInput: Campos para que el usuario ingrese datos.<br>
+Button: Botón para completar la acción de registro.<br>
+
+🌐-Manejo de Estados <br>
+const [nombre, setNombre] = useState('');<br>
+const [correo, setCorreo] = useState('');<br>
+const [contrasena, setContrasena] = useState('');<br>
+➡️Validaciones:<br>
+✔️Verificar que los campos no estén vacíos antes de enviar el formulario.<br>
+✔️Comprobar el formato del correo electrónico.<br>
+✔️Integración con Backend:<br>
+Enviar los datos ingresados a un servidor para crear la cuenta.<br>
+Usar Axios o Fetch para realizar la solicitud.<br>
+✔️Alertas y Feedback:<br>
+Mostrar mensajes de error si algo falla.<br>
+Indicar éxito cuando el registro sea completado.<br>
+✔️Navegación:<br>
+Redirigir al usuario a la pantalla de inicio de sesión o al dashboard después del registro exitoso.<br>
+
+
 
