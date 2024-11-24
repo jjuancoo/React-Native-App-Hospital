@@ -13,7 +13,7 @@
  
 </head>
 <body>  
-    <h1>MineCode Empresa de Software</h1>
+    <h1>LOGO</h1>
     <center><a href="https://ibb.co/tLL9hTS"><img src="https://i.ibb.co/cYYjvSP/pixelcut-export.png" alt="pixelcut-export" border="0"></a><br /><br /><center>
 
 ## 👥 **Equipo de Colaboradores**
