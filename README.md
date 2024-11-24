@@ -114,7 +114,7 @@ Este Prototipado Interactivo simula cómo funcionará el producto, vinculando la
 -Permitir que múltiples usuarios trabajen simultáneamente en un proyecto, ideal para equipos distribuidos.
 -Equipos de diseñadores, desarrolladores y gerentes pueden trabajar juntos en un solo archivo.
 -Crear componentes reutilizables como botones, íconos, y estilos de texto.
-<a href="https://ibb.co/gF23jNp"><img src="https://i.ibb.co/qFSdyKf/figma.png" alt="figma" border="0"></a>
+<a href="https://ibb.co/Q70ZXDP"><img src="https://i.ibb.co/sp7htWK/Captura-de-pantalla-2024-11-24-115520.png" alt="Captura-de-pantalla-2024-11-24-115520" border="0"></a>
 
 
 
