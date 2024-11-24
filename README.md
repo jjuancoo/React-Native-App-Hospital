@@ -106,4 +106,15 @@ Desarrollar una aplicación móvil integral en React Native que mejore la gesti�
 Los prototipos permiten simular la interacción real con la aplicación, lo que facilita identificar y corregir problemas de navegación, accesibilidad o diseño. En una aplicación de radiología, donde los usuarios necesitan realizar tareas complejas como manipular imágenes DICOM o acceder rápidamente a datos clínicos, garantizar una experiencia de usuario fluida es vital.
 
 
+### Figma Interactivo
+link:https://www.figma.com/proto/FZr08BZPNhC7syKXbvJhkS/PROYECTO-HOSPITAL?node-id=0-1&t=1eqsOiX43sdWzmWo-1
+<br>
+🎯Figma es una herramienta de diseño gráfico y de interfaz de usuario (UI) que se utiliza principalmente para diseño de Interfaces de Usuario, para crear interfaces para aplicaciones móviles, sitios web y software.
+Este Prototipado Interactivo simula cómo funcionará el producto, vinculando las pantallas con transiciones y animaciones para probar el flujo de usuario. Esta herramienta nos ayudo en: 
+-Permitir que múltiples usuarios trabajen simultáneamente en un proyecto, ideal para equipos distribuidos.
+-Equipos de diseñadores, desarrolladores y gerentes pueden trabajar juntos en un solo archivo.
+-Crear componentes reutilizables como botones, íconos, y estilos de texto.
+<a href="https://ibb.co/gF23jNp"><img src="https://i.ibb.co/qFSdyKf/figma.png" alt="figma" border="0"></a>
+
+
 
