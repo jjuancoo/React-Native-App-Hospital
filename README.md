@@ -116,5 +116,27 @@ Este Prototipado Interactivo simula cómo funcionará el producto, vinculando la
 -Crear componentes reutilizables como botones, íconos, y estilos de texto.
 <a href="https://ibb.co/Q70ZXDP"><img src="https://i.ibb.co/sp7htWK/Captura-de-pantalla-2024-11-24-115520.png" alt="Captura-de-pantalla-2024-11-24-115520" border="0"></a>
 
+### ------------------ Desarrollo de Aplicación -------------------------
+Este código es un componente funcional llamado SignIn en React Native que implementa una interfaz para iniciar sesión en una aplicación. Se conecta con un backend usando Axios para autenticación y utiliza almacenamiento local (AsyncStorage) para guardar el token de acceso y otros datos. 
+<a href="https://ibb.co/7Stp7pR"><img src="https://i.ibb.co/b65vpv2/Captura-de-pantalla-2024-11-24-120800.png" alt="Captura-de-pantalla-2024-11-24-120800" border="0"></a>
+<br>
+🌐-Importaciones
+🟩useState: Permite manejar estados locales dentro del componente.
+🟩View, StyleSheet: Elementos básicos de diseño en React Native.
+🟩Componentes de react-native-paper: Text, TextInput, Button: Elementos para texto y entradas de usuario.
+Dialog, Portal: Muestra un cuadro de diálogo como alerta.
+🟩Axios: Librería para hacer solicitudes HTTP al servidor.
+🟩AsyncStorage: Maneja el almacenamiento persistente de datos en el dispositivo.
+🟩useAuth: Contexto personalizado para manejar autenticación (probablemente contiene la lógica para iniciar sesión globalmente en la app).
 
+🌐-Estados Locales
+🟩Nombre_Usuario, Correo_Electronico, Contrasena, Numero_Telefono_Movil: Campos que almacenan la información ingresada por el usuario.
+🟩alert: Determina si se muestra una alerta en caso de campos incompletos.
+
+🌐-Componentes y Flujo
+➡️Entradas de Usuario:
+--Campos de texto para Nombre_Usuario, Correo_Electronico, Contrasena, Numero_Telefono_Movil, controlados por useState.
+--Botón de Iniciar Sesión:
+--Llama a authenticateUser al presionarlo.
+--Cuadro de Diálogo:Muestra un mensaje de error si los campos están vacíos (alert está en true).
 
