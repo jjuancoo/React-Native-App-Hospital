@@ -93,6 +93,8 @@ Desarrollar una aplicación móvil integral en React Native que mejore la gesti�
 
 ---
 ### Primeros prototipos
-<a href="https://ibb.co/cNjq51s"><img src="https://i.ibb.co/CnfLdzS/1.jpg" alt="1" border="0"></a><br /><a target='_blank' href='https://imgbb.com/'>where to find free photos</a><br />
+<a href="https://ibb.co/cNjq51s"><img src="https://i.ibb.co/CnfLdzS/1.jpg" alt="1" border="0"></a><br>
+<a href="https://ibb.co/wpSyPQc"><img src="https://i.ibb.co/ssKjN1W/2.jpg" alt="2" border="0"></a><br>
+Se inicializo con oproitetioreofasd asd
 
 
