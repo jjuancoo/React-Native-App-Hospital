@@ -273,7 +273,16 @@ Si resultStudies tiene datos, se mapean los resultados y se muestran dentro de u
 🌐-Funcionalidad:
 ✔️Carga de datos: El componente hace una petición a la API para obtener los resultados de los estudios y los muestra en pantalla. Si los resultados aún no se han cargado, muestra un mensaje de carga.<br>
 ✔️Interactividad: El botón flotante (FAB) puede ser utilizado para agregar nuevos resultados, aunque en el código actual solo imprime un mensaje al presionar.<br>
-✔️Manejo de estado: Usa useState para almacenar los resultados y useEffect para hacer la petición a la API una sola vez cuando el componente se monta.<br>
+✔️Manejo de estado: Usa useState para almacenar los resultados y useEffect para hacer la petición a la API una sola vez cuando el componente se monta.<br><br>
 
 
+### El conjunto de códigos proporcionados son ejemplos de diferentes pantallas y funcionalidades dentro de una aplicación móvil utilizando React Native y algunas bibliotecas populares como React Native Paper, Axios y AsyncStorage. La aplicación parece estar orientada a un sistema de gestión de estudios médicos o servicios relacionados, donde se pueden registrar, visualizar y administrar los resultados de los estudios, así como gestionar la autenticación y la configuración del usuario.<br><br>
 
+🌐-Funcionalidades clave:<br>
+✔️Autenticación: Varias pantallas, como SignIn y SignUp, permiten a los usuarios iniciar sesión y registrarse mediante un formulario que valida los campos de entrada. En el caso de inicio de sesión, se realizan peticiones a una API para autenticar al usuario y almacenar los datos necesarios en el almacenamiento local (AsyncStorage).<br><br><br>
+
+✔️Gestión de resultados: La pantalla ResultadosEstudios se encarga de mostrar los resultados de los estudios médicos, con un indicador de carga mientras se obtienen los datos desde una API. Si no hay resultados disponibles, muestra un mensaje de espera junto con una imagen que indica la ausencia de datos.
+<br><br><br>
+✔️Interacción y navegación: Utiliza la biblioteca react-navigation para facilitar la navegación entre pantallas (como en la pantalla de Welcome o Configuración). Además, se ofrece una Floating Action Button (FAB) para realizar acciones adicionales, como agregar nuevos registros, mejorando la experiencia de usuario.
+<br><br><br>
+✔️Manejo de la configuración de la cuenta: En la pantalla de Configuración, los usuarios pueden editar su perfil, cambiar su contraseña o cerrar sesión. Si deciden cerrar sesión, se muestra un cuadro de diálogo de confirmación, y al cerrar sesión, se limpia el almacenamiento local y se actualiza el estado global de autenticación.
