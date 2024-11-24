@@ -119,7 +119,7 @@ Este Prototipado Interactivo simula cómo funcionará el producto, vinculando la
 ### ------------------ Desarrollo de Aplicación -------------------------
 ### ⚕️Bienvenido
 El componente Welcome es una pantalla de bienvenida para una aplicación móvil. Proporciona una introducción básica con una imagen, un mensaje de bienvenida y botones para navegar a las pantallas de inicio de sesión y registro.<br>
-<a href="https://ibb.co/hCMR3SD"><img src="https://i.ibb.co/4JfZhHP/Captura-de-pantalla-2024-11-24-121917.png" alt="Captura-de-pantalla-2024-11-24-121917" border="0"></a><br>
+<a href="https://ibb.co/hCMR3SD"><img src="https://i.ibb.co/4JfZhHP/Captura-de-pantalla-2024-11-24-121917.png" alt="Captura-de-pantalla-2024-11-24-121917" border="0"></a><br><br>
 
 ### ⚕️Splash 
 El componente Splash es una pantalla de carga (splash screen) que se muestra cuando la aplicación se inicia, típicamente mientras se cargan datos o se realiza alguna operación de inicialización.<br>
@@ -129,7 +129,7 @@ El componente Splash es una pantalla de carga (splash screen) que se muestra cua
 Dentro de View están los siguientes elementos:<br>
 ➡️Image: Muestra una imagen (un archivo medicine_ss.png ubicado en la carpeta ../../src/img/), probablemente un logo o una ilustración relacionada con la aplicación.<br>
 ➡️ActivityIndicator: Muestra un indicador de carga, que es una animación circular que gira para indicar que la aplicación está realizando una tarea en segundo plano, como la carga de datos. Tiene un tamaño large y un color azul (#0000ff).<br>
-➡️Text: Muestra el texto "Privilege Care" debajo del indicador de carga. Este texto sirve como nombre o marca de la aplicación.<br>
+➡️Text: Muestra el texto "Privilege Care" debajo del indicador de carga. Este texto sirve como nombre o marca de la aplicación.<br><br>
 
 
 
@@ -155,7 +155,7 @@ Dialog, Portal: Muestra un cuadro de diálogo como alerta.<br>
 --Campos de texto para Nombre_Usuario, Correo_Electronico, Contrasena, Numero_Telefono_Movil, controlados por useState.<br>
 --Botón de Iniciar Sesión:<br>
 --Llama a authenticateUser al presionarlo.<br>
---Cuadro de Diálogo:Muestra un mensaje de error si los campos están vacíos (alert está en true).<br>
+--Cuadro de Diálogo:Muestra un mensaje de error si los campos están vacíos (alert está en true).<br><br>
 
 
 ### ⚕️REGISTRARSE
@@ -185,7 +185,60 @@ Usar Axios o Fetch para realizar la solicitud.<br>
 Mostrar mensajes de error si algo falla.<br>
 Indicar éxito cuando el registro sea completado.<br>
 ✔️Navegación:<br>
-Redirigir al usuario a la pantalla de inicio de sesión o al dashboard después del registro exitoso.<br>
+Redirigir al usuario a la pantalla de inicio de sesión o al dashboard después del registro exitoso.<br><br>
 
+
+### ⚕️Listas de estudios (citas)
+Este código es un componente de React Native llamado Citas que muestra una lista de "estudios" obtenidos desde una API y permite al usuario agregar nuevos estudios mediante un botón flotante.<br>
+<a href="https://ibb.co/89QGz7r"><img src="https://i.ibb.co/zZtC84X/Captura-de-pantalla-2024-11-24-122556.png" alt="Captura-de-pantalla-2024-11-24-122556" border="0"></a><br>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/thXNZPk/Captura-de-pantalla-2024-11-24-122626.png" alt="Captura-de-pantalla-2024-11-24-122626" border="0"></a><br><br>
+
+🌐-Importaciones <br>
+✔️View: Contenedor principal para organizar los elementos.<br>
+✔️ScrollView: Permite que el contenido sea desplazable si es más grande que la pantalla.<br>
+✔️StyleSheet: Define los estilos de los elementos.<br>
+
+🌐-Estado y Efectos <br>
+✔️studios: Un estado que guarda la lista de estudios obtenidos desde la API. Inicialmente está vacío.<br>
+✔️axiosInstance: Instancia de Axios que se usa para hacer peticiones HTTP a la API. El hook useAxios probablemente configura la URL base y otros parámetros de la instancia de Axios.<br>
+✔️useEffect:<br>
+-Se ejecuta al montar el componente ([] como dependencia, lo que significa que solo se ejecuta una vez cuando el componente se carga).<br>
+-Dentro de useEffect, se define la función fetchStudios que hace una petición GET a la ruta /estudios usando axiosInstance.get('/estudios').<br>
+-Si la petición es exitosa, la respuesta (probablemente una lista de estudios) se guarda en el estado studios utilizando setStudios(response.data).<br>
+-Si ocurre un error, se muestra en la consola.<br>
+
+🌐-Funcionamiento:<br>
+✔️Al cargar el componente, realiza una solicitud a la API para obtener los estudios.<br>
+✔️Muestra la lista de estudios en tarjetas con información relevante.<br>
+✔️Permite al usuario presionar un botón flotante para agregar nuevos estudios (aunque aún no está implementada la funcionalidad completa para esta acción).<br><br>
+
+### ⚕️CONFIGURACION
+Se utiliza para mostrar una pantalla de configuración de usuario, donde el usuario puede editar su perfil, cambiar su contraseña, y cerrar sesión. Además, incluye un cuadro de diálogo de confirmación para cerrar sesión.<br>
+<a href="https://ibb.co/zxH0jqj"><img src="https://i.ibb.co/1QJwhFh/Captura-de-pantalla-2024-11-24-122937.png" alt="Captura-de-pantalla-2024-11-24-122937" border="0"></a><br>
+<a href="https://ibb.co/Wcby4BG"><img src="https://i.ibb.co/9qFTkyc/Captura-de-pantalla-2024-11-24-122943.png" alt="Captura-de-pantalla-2024-11-24-122943" border="0"></a><br><br>
+
+🌐-Funciones:<br>
+✔️cerrarSesion: Esta función establece el estado alert en true, lo que activa la visualización del cuadro de diálogo para confirmar si el usuario realmente desea cerrar sesión.<br>
+
+🌐-Dialog de Confirmación:<br>
+✔️Dialog y Portal: Cuando el usuario presiona "Cerrar Sesión", se muestra un cuadro de diálogo para confirmar la acción.<br>
+✔️El título del cuadro de diálogo es "Cerrar Sesión".<br>
+✔️En el contenido, se muestra el texto "¿Seguro que quieres salir?".<br>
+✔️El cuadro de diálogo tiene dos botones:<br>
+✔️Cerrar: Simplemente cierra el cuadro de diálogo sin realizar ninguna acción.<br>
+✔️Salir: Realiza dos acciones:<br>
+        Llama a signOut() (probablemente para cambiar el estado de autenticación en el contexto).<br>
+        Limpia el AsyncStorage, eliminando cualquier dato persistente (como tokens).<br>
+✔️Muestra un mensaje en la consola indicando que la sesión se ha cerrado.<br>
+
+🌐-Funcionalidad:<br>
+Al cargar la pantalla, se presenta una interfaz con botones para las opciones de configuración.<br>
+Cuando el usuario presiona "Cerrar Sesión", se activa un cuadro de diálogo pidiendo confirmación.<br>
+Si el usuario confirma la acción de cerrar sesión, se ejecuta el cierre de sesión (llamando a signOut() y limpiando el AsyncStorage).<br>
+El componente también tiene botones para editar el perfil, cambiar la contraseña y gestionar la seguridad, aunque las acciones específicas para estos botones no están implementadas en este código.<br>
+
+### ⚕️PAGINA DE INICIO
+<br><br>
+<a href="https://ibb.co/9V7bTbr"><img src="https://i.ibb.co/4YH8T8V/Captura-de-pantalla-2024-11-24-123312.png" alt="Captura-de-pantalla-2024-11-24-123312" border="0"></a>
 
 
