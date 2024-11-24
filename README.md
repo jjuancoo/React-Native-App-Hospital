@@ -239,6 +239,41 @@ El componente también tiene botones para editar el perfil, cambiar la contrase�
 
 ### ⚕️PAGINA DE INICIO
 <br><br>
-<a href="https://ibb.co/9V7bTbr"><img src="https://i.ibb.co/4YH8T8V/Captura-de-pantalla-2024-11-24-123312.png" alt="Captura-de-pantalla-2024-11-24-123312" border="0"></a>
+<a href="https://ibb.co/9V7bTbr"><img src="https://i.ibb.co/4YH8T8V/Captura-de-pantalla-2024-11-24-123312.png" alt="Captura-de-pantalla-2024-11-24-123312" border="0"></a><br><br>
+
+🌐-Funcionalidad:<br>
+✔️Pantalla Principal: La pantalla muestra un mensaje de bienvenida en la parte superior.<br>
+✔️ScrollView: Aunque el contenido no es grande, el ScrollView permite que si el contenido se extiende, el usuario pueda desplazarlo.<br>
+✔️Texto Estilizado: El texto tiene un estilo que lo hace resaltar en la pantalla, con un tamaño grande, negrita y espaciado.<br>
+
+🌐-Estructura del Componente:<br>
+✔️El componente Home es una función que devuelve un View que contiene un ScrollView.<br>
+✔️Dentro del ScrollView, se coloca un Text que muestra el mensaje "Bienvenido a Privilege Care".<br>
+
+
+
+### ⚕️Resultados Estudios
+<br><br>
+<a href="https://ibb.co/fxMRgyR"><img src="https://i.ibb.co/5RTD0SD/Captura-de-pantalla-2024-11-24-123655.png" alt="Captura-de-pantalla-2024-11-24-123655" border="0"></a><br><br>
+Muestra los resultados de estudios médicos o de otro tipo, obtenidos a través de una API. <br>
+🌐-Estado:<br>
+✔️resultStudies: Un estado que guarda los resultados de los estudios obtenidos de la API. Inicialmente está vacío.
+useEffect:<br>
+✔️Dentro del useEffect, se define la función getStudies que hace una solicitud HTTP a la API para obtener los resultados de los estudios (/resultados_estudios).
+Cuando la respuesta se obtiene correctamente, los datos se almacenan en el estado resultStudies.<br>
+useEffect se ejecuta solo una vez al montar el componente, debido a que el array de dependencias está vacío ([]).<br>
+
+🌐-Renderizado:
+Si resultStudies está vacío (es decir, aún no se han cargado los resultados), se muestra:<br>
+Una imagen no_data.png que indica que no hay resultados.<br>
+Un ActivityIndicator que muestra un spinner de carga.<br>
+Un Text que dice "Se están cargando los resultados...".<br>
+Si resultStudies tiene datos, se mapean los resultados y se muestran dentro de un componente Text por cada estudio.<br>
+
+🌐-Funcionalidad:
+✔️Carga de datos: El componente hace una petición a la API para obtener los resultados de los estudios y los muestra en pantalla. Si los resultados aún no se han cargado, muestra un mensaje de carga.<br>
+✔️Interactividad: El botón flotante (FAB) puede ser utilizado para agregar nuevos resultados, aunque en el código actual solo imprime un mensaje al presionar.<br>
+✔️Manejo de estado: Usa useState para almacenar los resultados y useEffect para hacer la petición a la API una sola vez cuando el componente se monta.<br>
+
 
 
