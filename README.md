@@ -10,7 +10,7 @@
     
 ## LOGO RADIOLOGIA E IMAGEN APLICACION
 <head>
-    <center><<a href="https://imgbb.com/"><img src="https://i.ibb.co/THvdF6d/Captura-de-pantalla-2024-11-24-101301-removebg-preview.png" alt="Captura-de-pantalla-2024-11-24-101301-removebg-preview" border="0"></a><br />
+    <center><a href="https://imgbb.com/"><img src="https://i.ibb.co/THvdF6d/Captura-de-pantalla-2024-11-24-101301-removebg-preview.png" alt="Captura-de-pantalla-2024-11-24-101301-removebg-preview" border="0"></a><br/>
 </head>
 <body>  
     <h1>MineCode Empresa de Software</h1>
@@ -69,24 +69,14 @@ Desarrollar una aplicación móvil integral en React Native que mejore la gesti�
             <th>Por qué se usó</th>
         </tr>
         <tr>
-            <td>MySQL</td>
-            <td>Sistema de gestión de bases de datos relacional.</td>
-            <td>MySQL se empleó para almacenar datos estructurados relacionados con la información de los pacientes, informes médicos, y otros datos relacionados con la práctica médica.</td>
-        </tr>
-        <tr>
-            <td>Vue.js</td>
-            <td>Framework progresivo de JavaScript para construir interfaces de usuario.</td>
-            <td>Vue.js se utilizó para desarrollar una interfaz de usuario interactiva y receptiva, permitiendo una experiencia fluida para los usuarios al interactuar con la aplicación de Radiología e Imagen.</td>
+            <td>Node.js</td>
+            <td>Node.js es un entorno en tiempo de ejecución multiplataforma, de código abierto, para la capa del servidor (pero no limitándose a ello) basado en el lenguaje de programación JavaScript, asíncrono</td>
+            <td>Node.js puede desempeñar un papel crucial en el desarrollo del backend, proporcionando servicios como la gestión de datos, el procesamiento de imágenes médicas y la comunicación entre el frontend y el servidor.</td>
         </tr>
         <tr>
             <td>JavaScript</td>
             <td>Lenguaje de programación utilizado tanto en el frontend como en el backend.</td>
             <td>JavaScript es fundamental en el desarrollo de aplicaciones web modernas, se utilizó tanto en el frontend (Vue.js) como en el backend para la lógica de la aplicación y la interacción con las bases de datos.</td>
-        </tr>
-         <tr>
-            <td>Node.js</td>
-            <td>Entorno en tiempo de ejecución multiplataforma, de código abierto, para la capa del servidor basado en el lenguaje de programación JavaScript.</td>
-            <td> Es un entorno de ejecución para JavaScript que permite ejecutar código JavaScript fuera del navegador web, permitiendo usar JavaScript tanto en el frontend como en el backend, facilitando el desarrollo full-stack con un solo lenguaje de programación.</td>
         </tr>
         <tr>
             <td>Git</td>
