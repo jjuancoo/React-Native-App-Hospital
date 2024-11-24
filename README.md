@@ -1,4 +1,4 @@
-#  Proyecto de Radiología e Imagen
+# 🌟 Proyecto de Radiología e Imagen 🌟
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +8,7 @@
     Diseñeada para solucionar problemas relacionadas al area de Tecnologias de la Información 
 
     
-## LOGO RADIOLOGIA E IMAGEN APLICACION
+## 🎨 LOGO RADIOLOGIA E IMAGEN APLICACION
 <head>
     <center><a href="https://imgbb.com/"><img src="https://i.ibb.co/THvdF6d/Captura-de-pantalla-2024-11-24-101301-removebg-preview.png" alt="Captura-de-pantalla-2024-11-24-101301-removebg-preview" border="0"></a><br/>
 </head>
@@ -16,14 +16,14 @@
     <h1>MineCode Empresa de Software</h1>
     <center> <a href="https://ibb.co/qk26yJ6"><img src="https://i.ibb.co/f4TJ1DJ/White-and-Blue-Minimalist-Organizational-Chart-Graph-1.png" alt="White-and-Blue-Minimalist-Organizational-Chart-Graph-1" border="0"></a></a><center>
 
-## 👥 Colaboradores
+## 👥 **Equipo de Colaboradores**
 
-- **📄 Alexis Gomez Gaona** - *Documentador*
-- **💻 Armando Carrasco Vargas** - *Front End*
-- **🖥️ Juan Manuel Cruz Ortiz** - *Back End*
-- **📝 Janeth Ahuacatitla Amixtlan** - *Documentación*
-
----
+| Rol                     | Nombre                         |
+|--------------------------|-------------------------------|
+| **📄 Documentador**      | Alexis Gomez Gaona            |
+| **💻 Front-End**         | Armando Carrasco Vargas       |
+| **🖥️ Back-End**         | Juan Manuel Cruz Ortiz        |
+| **📝 Documentación**     | Janeth Ahuacatitla Amixtlan   |
 
 
 
@@ -92,13 +92,13 @@ Desarrollar una aplicación móvil integral en React Native que mejore la gesti�
 
 
 ---
-### Primeros bocetos para la aplicación 
+### 🎨 Primeros bocetos para la aplicación 
 <a href="https://ibb.co/cNjq51s"><img src="https://i.ibb.co/CnfLdzS/1.jpg" alt="1" border="0"></a><br>
 <a href="https://ibb.co/wpSyPQc"><img src="https://i.ibb.co/ssKjN1W/2.jpg" alt="2" border="0"></a><br>
 🎯Los bocetos son una herramienta fundamental en el desarrollo de aplicaciones móviles, especialmente en un campo tan especializado como la radiología e imagen médica. Estas representaciones gráficas preliminares ofrecen múltiples ventajas a lo largo del proceso de diseño y desarrollo, como bien estos fueron los primeros bocetos conceptuales que se presento al equipo para brindar varias ideas y detallles a la aplicacion.
 
 
-### Primeros prototipos de diseño Wireframes
+### 🖌️ Primeros prototipos de diseño Wireframes
 <a href="https://ibb.co/TRMPF4L"><img src="https://i.ibb.co/3WmSLpz/2.png" alt="2" border="0"></a><br>
 <a href="https://ibb.co/MMZRKGV"><img src="https://i.ibb.co/2gWjRst/213.png" alt="213" border="0"></a><br>
 <a href="https://ibb.co/4JLNSJm"><img src="https://i.ibb.co/t36C23m/33333.png" alt="33333" border="0"></a><br>
@@ -107,7 +107,7 @@ Los prototipos permiten simular la interacción real con la aplicación, lo que 
 
 
 ### Figma Interactivo
-link:https://www.figma.com/proto/FZr08BZPNhC7syKXbvJhkS/PROYECTO-HOSPITAL?node-id=0-1&t=1eqsOiX43sdWzmWo-1
+[👉 Ver Prototipo en Figma](https://www.figma.com/proto/FZr08BZPNhC7syKXbvJhkS/PROYECTO-HOSPITAL?node-id=0-1&t=1eqsOiX43sdWzmWo-1)
 <br>
 🎯Figma es una herramienta de diseño gráfico y de interfaz de usuario (UI) que se utiliza principalmente para diseño de Interfaces de Usuario, para crear interfaces para aplicaciones móviles, sitios web y software.
 Este Prototipado Interactivo simula cómo funcionará el producto, vinculando las pantallas con transiciones y animaciones para probar el flujo de usuario. Esta herramienta nos ayudo en: 
