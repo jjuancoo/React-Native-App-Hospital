@@ -92,9 +92,18 @@ Desarrollar una aplicación móvil integral en React Native que mejore la gesti�
 
 
 ---
-### Primeros prototipos
+### Primeros bocetos para la aplicación 
 <a href="https://ibb.co/cNjq51s"><img src="https://i.ibb.co/CnfLdzS/1.jpg" alt="1" border="0"></a><br>
 <a href="https://ibb.co/wpSyPQc"><img src="https://i.ibb.co/ssKjN1W/2.jpg" alt="2" border="0"></a><br>
-Se inicializo con oproitetioreofasd asd
+🎯Los bocetos son una herramienta fundamental en el desarrollo de aplicaciones móviles, especialmente en un campo tan especializado como la radiología e imagen médica. Estas representaciones gráficas preliminares ofrecen múltiples ventajas a lo largo del proceso de diseño y desarrollo, como bien estos fueron los primeros bocetos conceptuales que se presento al equipo para brindar varias ideas y detallles a la aplicacion.
+
+
+### Primeros prototipos de diseño Wireframes
+<a href="https://ibb.co/TRMPF4L"><img src="https://i.ibb.co/3WmSLpz/2.png" alt="2" border="0"></a><br>
+<a href="https://ibb.co/MMZRKGV"><img src="https://i.ibb.co/2gWjRst/213.png" alt="213" border="0"></a><br>
+<a href="https://ibb.co/4JLNSJm"><img src="https://i.ibb.co/t36C23m/33333.png" alt="33333" border="0"></a><br>
+🎯Los prototipos de diseño Wireframes son una etapa crucial en el desarrollo de aplicaciones móviles, particularmente en áreas especializadas como la radiología e imagen médica. Representan versiones más avanzadas y funcionales de los bocetos iniciales y desempeñan un papel esencial en la creación de soluciones efectivas y adaptadas a las necesidades del usuario final.
+Los prototipos permiten simular la interacción real con la aplicación, lo que facilita identificar y corregir problemas de navegación, accesibilidad o diseño. En una aplicación de radiología, donde los usuarios necesitan realizar tareas complejas como manipular imágenes DICOM o acceder rápidamente a datos clínicos, garantizar una experiencia de usuario fluida es vital.
+
 
 
