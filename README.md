@@ -113,8 +113,8 @@ Los prototipos permiten simular la interacción real con la aplicación, lo que 
 Este Prototipado Interactivo simula cómo funcionará el producto, vinculando las pantallas con transiciones y animaciones para probar el flujo de usuario. Esta herramienta nos ayudo en: 
 -Permitir que múltiples usuarios trabajen simultáneamente en un proyecto, ideal para equipos distribuidos.
 -Equipos de diseñadores, desarrolladores y gerentes pueden trabajar juntos en un solo archivo.
--Crear componentes reutilizables como botones, íconos, y estilos de texto.
-<a href="https://ibb.co/Q70ZXDP"><img src="https://i.ibb.co/sp7htWK/Captura-de-pantalla-2024-11-24-115520.png" alt="Captura-de-pantalla-2024-11-24-115520" border="0"></a>
+-Crear componentes reutilizables como botones, íconos, y estilos de texto.<br>
+<a href="https://ibb.co/pQrtmSG"><img src="https://i.ibb.co/qCFtZvX/Captura-de-pantalla-2024-11-24-183438.png" alt="Captura-de-pantalla-2024-11-24-183438" border="0"></a><br><br>
 
 ### ------------------ Desarrollo de Aplicación -------------------------
 ### ⚕️Bienvenido
