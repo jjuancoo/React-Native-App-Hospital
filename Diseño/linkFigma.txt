@@ -1,0 +1,4 @@
+mockups:
+https://www.figma.com/design/SJJc21xmuuukV9eGcFCCH8/WIREFRAMES-PRIVILE-CARE-FLUTTER?node-id=0-1&m=dev&t=iXv4hsnje5D16Spy-1
+
+.
