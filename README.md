@@ -107,7 +107,7 @@ Los prototipos permiten simular la interacción real con la aplicación, lo que 
 
 
 ### Figma Interactivo
-[👉 Ver Prototipo en Figma](https://www.figma.com/proto/FZr08BZPNhC7syKXbvJhkS/PROYECTO-HOSPITAL?node-id=1-8&t=FmNDuknYlBTnzGcR-1)
+[👉 Ver Prototipo en Figma](https://www.figma.com/proto/FZr08BZPNhC7syKXbvJhkS/PROYECTO-HOSPITAL?node-id=0-1&t=wD76cmzQTLQOECMA-1)
 <br>
 🎯Figma es una herramienta de diseño gráfico y de interfaz de usuario (UI) que se utiliza principalmente para diseño de Interfaces de Usuario, para crear interfaces para aplicaciones móviles, sitios web y software.
 Este Prototipado Interactivo simula cómo funcionará el producto, vinculando las pantallas con transiciones y animaciones para probar el flujo de usuario. Esta herramienta nos ayudo en: 
