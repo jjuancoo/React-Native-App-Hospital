@@ -10,7 +10,6 @@ const EditForms = ({ route }) => {
     //Definiendo el usuario
     const [user, setUser] = useState({})
     const [visible, setVisible] = useState(false)
-    const [queryAPI, setQueryAPI] = useState(true)
 
     const { id } = route.params
     const axiosInstance = useAxios()
@@ -23,7 +22,6 @@ const EditForms = ({ route }) => {
       try {
         await axiosInstance.delete(`/estudios/${id}`)
         console.log(`deleted ${id}`)
-        
       } catch (error) {
         console.log(error)
       }
@@ -35,17 +33,13 @@ const EditForms = ({ route }) => {
         const getUser = async () => {
             try {
                 const response = await axiosInstance.get(`/estudios/${id}`)
-                setUser(response.data)
-                setQueryAPI(false)
+                setUser(response.data);
             } catch (error) {
                 console.log(error)
             }
         }
-        //Si consultamos la recarga el effect
-        if(queryAPI){
-          getUser();
-        }
-    }, [queryAPI])
+        getUser();
+    }, [])
     
   return (
     <>

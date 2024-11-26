@@ -11,19 +11,23 @@ const Citas = () => {
 
   const [studios, setStudios] = useState([]);
   const axiosInstance = useAxios();
+  const [queryAPI, setQueryAPI] = useState(true)
 
   useEffect(() => {
     const fetchStudios = async () => {
       try {
         const response = await axiosInstance.get('/estudios');
         setStudios(response.data);
+        setQueryAPI(false)
       } catch (error) {
         console.error('Error fetching estudios:', error);
       }
     };
 
-    fetchStudios();
-  }, []);
+    if(queryAPI){
+      fetchStudios();
+    }
+  }, [queryAPI]);
   
   return (
     <>
