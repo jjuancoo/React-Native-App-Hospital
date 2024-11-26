@@ -16,7 +16,6 @@ const Citas = () => {
       try {
         const response = await axiosInstance.get('/estudios');
         setStudios(response.data);
-        console.log(response.data);
       } catch (error) {
         console.error('Error fetching estudios:', error);
       }
@@ -34,7 +33,7 @@ const Citas = () => {
             {studios.map(studio => (
               <View style={{marginVertical: 6, padding: 2}} key={studio.id}>
                 <TouchableHighlight 
-                 onPress={() => navigation.navigate('Modals')}
+                 onPress={() => navigation.navigate('Modals', {id: studio.id})}
                  underlayColor="transparent"
                 >
                 <Card>
@@ -45,6 +44,7 @@ const Citas = () => {
                     <Text>Dirigido a: {studio.Dirigido_A}</Text>
                     <Text>Observaciones: {studio.Observaciones}</Text>
                     <Text>Creada: {studio.Fecha_Registro}</Text>
+                    <Text>ID: {studio.id}</Text>
                   </Card.Content>
                 </Card>
                 </TouchableHighlight>
