@@ -3,6 +3,7 @@ import { useNavigation } from '@react-navigation/native'
 import { View, ScrollView, StyleSheet, TouchableHighlight } from 'react-native'
 import { Text, Card, FAB } from 'react-native-paper'
 import useAxios from '../../api/estudios.api'
+import LoadingStudios from './Screens/LoadingStudios'
 
 const Citas = () => {
 
@@ -30,33 +31,38 @@ const Citas = () => {
         <View>
           <Text style={styles.title}>Estudios</Text>
           <View>
-            {studios.map(studio => (
-              <View style={{marginVertical: 6, padding: 2}} key={studio.id}>
-                <TouchableHighlight 
-                 onPress={() => navigation.navigate('Modals', {id: studio.id})}
-                 underlayColor="transparent"
-                >
-                <Card>
-                  <Card.Content>
-                    <Text style={styles.titleCard}>{studio.Tipo}</Text>
-                    <Text>Estado: {studio.Estatus}</Text>
-                    <Text>Costo: {studio.Total_Costo}</Text>
-                    <Text>Dirigido a: {studio.Dirigido_A}</Text>
-                    <Text>Observaciones: {studio.Observaciones}</Text>
-                    <Text>Creada: {studio.Fecha_Registro}</Text>
-                    <Text>ID: {studio.id}</Text>
-                  </Card.Content>
-                </Card>
-                </TouchableHighlight>
-              </View>
-            ))}
+            {studios.length === 0 ? (
+              <LoadingStudios />
+            ) : (
+              studios.map(studio => (
+                <View style={{marginVertical: 6, padding: 2}} key={studio.id}>
+                  <TouchableHighlight
+                    onPress={() =>
+                      navigation.navigate('Modals', {id: studio.id})
+                    }
+                    underlayColor="transparent">
+                    <Card>
+                      <Card.Content>
+                        <Text style={styles.titleCard}>{studio.Tipo}</Text>
+                        <Text>Estado: {studio.Estatus}</Text>
+                        <Text>Costo: {studio.Total_Costo}</Text>
+                        <Text>Dirigido a: {studio.Dirigido_A}</Text>
+                        <Text>Observaciones: {studio.Observaciones}</Text>
+                        <Text>Creada: {studio.Fecha_Registro}</Text>
+                        <Text>ID: {studio.id}</Text>
+                      </Card.Content>
+                    </Card>
+                  </TouchableHighlight>
+                </View>
+              ))
+            )}
           </View>
         </View>
       </ScrollView>
       <FAB
         icon={'plus'}
         style={styles.fab}
-        label='Nuevo Estudio'
+        label="Nuevo Estudio"
         onPress={() => console.log('Pressed')}
       />
     </>
