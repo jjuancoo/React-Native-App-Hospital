@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import { View, StyleSheet } from 'react-native'
-import { Text, Button, TextInput, Card } from 'react-native-paper'
+import { Text, Button, TextInput, Card, Dialog, Portal } from 'react-native-paper'
 import useAxios from '../../../api/estudios.api'
 
 const EditForms = ({navigation, route}) => {
     //Definiendo el usuario
     const [user, setUser] = useState({})
+    const [visible, setVisible] = useState(false)
 
     const {id} = route.params
     const axiosInstance = useAxios()
+
+    const showAlert = () => {
+      setVisible(true)
+    }
 
     //Cargar el usuario una vez abierto el modal
     useEffect(() => {
@@ -16,7 +21,6 @@ const EditForms = ({navigation, route}) => {
             try {
                 const response = await axiosInstance.get(`/estudios/${id}`)
                 setUser(response.data)
-                console.log(response.data)
             } catch (error) {
                 console.log(error)
             }
@@ -25,24 +29,51 @@ const EditForms = ({navigation, route}) => {
     }, [])
     
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Estudio</Text>
-      <Card>
-        <Text style={styles.subTitle}>{user.Tipo}</Text>
-        <Text>{user.Nivel_Urgencia}</Text>
-        <Text>{user.Dirigido_A}</Text>
-        <Text>{user.Observaciones}</Text>
-        <Text>{user.Estatus}</Text>
-        <Text>{user.Fecha_Registro}</Text>
-        <Button 
-            title="Cerrar Modal" 
-            onPress={() => navigation.goBack()}
-            mode='outlined'
-        >
-          Borrar estudio
-        </Button>
-      </Card>
-    </View>
+    <>
+      <View style={styles.container}>
+        <Text style={styles.title}>Estudio</Text>
+        <View style={{marginHorizontal: 12}}>
+          <Card>
+            <Card.Content>
+              <Text style={styles.subTitle}>{user.Tipo}</Text>
+              <Text>{user.Nivel_Urgencia}</Text>
+              <Text>{user.Dirigido_A}</Text>
+              <Text>{user.Observaciones}</Text>
+              <Text>{user.Estatus}</Text>
+              <Text>{user.Fecha_Registro}</Text>
+            </Card.Content>
+            <Card.Actions>
+              <Button
+                title="Cerrar Modal"
+                onPress={() => navigation.goBack()}
+                mode="outlined">
+                Volver
+              </Button>
+              <Button
+                title="Cerrar Modal"
+                onPress={showAlert}
+                mode="contained">
+                Borrar estudio
+              </Button>
+            </Card.Actions>
+          </Card>
+        </View>
+      </View>
+
+      <Portal>
+        <Dialog visible={visible} onDismiss={() => setVisible(false)}>
+          <Dialog.Title>Eliminar</Dialog.Title>
+          <Dialog.Content>
+            <Text>¿Está seguro de que desea eliminar el estudio?</Text>
+            <Text>Esta acción no se puede revertir</Text>
+          </Dialog.Content>
+          <Dialog.Actions>
+            <Button onPress={() => setVisible(false)}>Cerrar</Button>
+            <Button mode='contained' onPress={() => setVisible(false)}>Eliminar</Button>
+          </Dialog.Actions>
+        </Dialog>
+      </Portal>
+    </>
   );
 }
 
