@@ -1,9 +1,12 @@
 import React, {useState, useEffect} from 'react'
-import { View, ScrollView, StyleSheet } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
+import { View, ScrollView, StyleSheet, TouchableHighlight } from 'react-native'
 import { Text, Card, FAB } from 'react-native-paper'
 import useAxios from '../../api/estudios.api'
 
 const Citas = () => {
+
+  const navigation = useNavigation();
 
   const [studios, setStudios] = useState([]);
   const axiosInstance = useAxios();
@@ -30,6 +33,10 @@ const Citas = () => {
           <View>
             {studios.map(studio => (
               <View style={{marginVertical: 6, padding: 2}} key={studio.id}>
+                <TouchableHighlight 
+                 onPress={() => navigation.navigate('Modals')}
+                 underlayColor="transparent"
+                >
                 <Card>
                   <Card.Content>
                     <Text style={styles.titleCard}>{studio.Tipo}</Text>
@@ -40,6 +47,7 @@ const Citas = () => {
                     <Text>Creada: {studio.Fecha_Registro}</Text>
                   </Card.Content>
                 </Card>
+                </TouchableHighlight>
               </View>
             ))}
           </View>
