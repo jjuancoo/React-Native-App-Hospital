@@ -39,8 +39,16 @@ const ResultadosEstudios = () => {
                 </View>
             ) : (
                 resultStudies.map((result) => (
-                    <View key={result.id}>
-                        <Text>{result.Resultados}</Text>
+                    <View key={result.id} style={{marginVertical: 6, padding: 2}}>
+                        <Card>
+                          <Card.Content>
+                            <Text style={styles.titleCard}>{result.Resultados}</Text>
+                            <Text>{result.Observaciones}</Text>
+                            <Text>{result.Estatus}</Text>
+                            <Text>{result.Folio}</Text>
+                            <Text>{result.Fecha_Registro}</Text>
+                          </Card.Content>
+                        </Card>
                     </View>
                 ))
             )}
