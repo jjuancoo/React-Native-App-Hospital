@@ -2,17 +2,30 @@ import React, { useState, useEffect } from 'react'
 import { View, StyleSheet } from 'react-native'
 import { Text, Button, TextInput, Card, Dialog, Portal } from 'react-native-paper'
 import useAxios from '../../../api/estudios.api'
+import { useNavigation } from '@react-navigation/native'
 
-const EditForms = ({navigation, route}) => {
+const EditForms = ({ route }) => {
+    const navigation = useNavigation()
+
     //Definiendo el usuario
     const [user, setUser] = useState({})
     const [visible, setVisible] = useState(false)
 
-    const {id} = route.params
+    const { id } = route.params
     const axiosInstance = useAxios()
 
     const showAlert = () => {
       setVisible(true)
+    }
+
+    const deleteStudio = async (id) => {
+      try {
+        await axiosInstance.delete(`/estudios/${id}`)
+        console.log(`deleted ${id}`)
+      } catch (error) {
+        console.log(error)
+      }
+      navigation.navigate('Estudios')
     }
 
     //Cargar el usuario una vez abierto el modal
@@ -21,6 +34,7 @@ const EditForms = ({navigation, route}) => {
             try {
                 const response = await axiosInstance.get(`/estudios/${id}`)
                 setUser(response.data)
+                
             } catch (error) {
                 console.log(error)
             }
@@ -69,7 +83,12 @@ const EditForms = ({navigation, route}) => {
           </Dialog.Content>
           <Dialog.Actions>
             <Button onPress={() => setVisible(false)}>Cerrar</Button>
-            <Button mode='contained' onPress={() => setVisible(false)}>Eliminar</Button>
+            <Button 
+              mode='contained'
+              onPress={() => deleteStudio(id)}
+            >
+              Eliminar
+            </Button>
           </Dialog.Actions>
         </Dialog>
       </Portal>
