@@ -25,7 +25,7 @@ const Citas = () => {
   }, []);
   
   return (
-    <View>
+    <>
       <ScrollView style={styles.scroll}>
         <View>
           <Text style={styles.title}>Estudios</Text>
@@ -59,7 +59,7 @@ const Citas = () => {
         label='Nuevo Estudio'
         onPress={() => console.log('Pressed')}
       />
-    </View>
+    </>
   );
 };
 
