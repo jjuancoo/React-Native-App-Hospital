@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { View, ScrollView, StyleSheet } from 'react-native'
+import { View, ScrollView, StyleSheet, Image } from 'react-native'
 import { Text, Card, FAB } from 'react-native-paper'
 import useAxios from '../../api/estudios.api'
 import LoadingStudios from './Screens/LoadingStudios'
@@ -46,7 +46,12 @@ const ResultadosEstudios = () => {
           </View>
         </ScrollView>
         <FAB
-          icon="plus"
+          icon={({ size, color }) => (
+            <Image
+              source={require('../../src/icons/mas.png')}
+              style={{ width: size, height: size, tintColor: color }}
+            />
+          )}
           style={styles.fab}
           label='Nuevo Resultado'
           onPress={() => console.log('Pressed')}
