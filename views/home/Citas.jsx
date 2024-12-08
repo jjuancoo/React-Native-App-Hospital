@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { View, ScrollView, StyleSheet, TouchableHighlight, Image } from 'react-native'
-import { Text, Card, FAB } from 'react-native-paper'
+import { Text, Card, FAB, IconButton } from 'react-native-paper'
 import useAxios from '../../api/estudios.api'
 import LoadingStudios from './Screens/LoadingStudios'
 
@@ -47,7 +47,18 @@ const Citas = () => {
                     underlayColor="transparent">
                     <Card>
                       <Card.Content>
-                        <Text style={styles.titleCard}>{studio.Tipo}</Text>
+                        <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                          <Text style={styles.titleCard}>{studio.Tipo}</Text>
+                          <IconButton
+                            icon={({ size, color }) => (
+                              <Image
+                                source={require('../../src/icons/lapiz.png')}
+                                style={{ width: size, height: size, tintColor: color }}
+                              />
+                            )}
+                            onPress={() => console.log('Boton con icono')}
+                          />
+                        </View>
                         <Text>Estado: {studio.Estatus}</Text>
                         <Text>Costo: {studio.Total_Costo}</Text>
                         <Text>Dirigido a: {studio.Dirigido_A}</Text>
