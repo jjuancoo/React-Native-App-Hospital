@@ -2,9 +2,11 @@ import React, {useState, useEffect} from 'react'
 import { View, ScrollView, StyleSheet, Image } from 'react-native'
 import { Text, Card, FAB, IconButton } from 'react-native-paper'
 import useAxios from '../../api/estudios.api'
+import { useNavigation } from '@react-navigation/native'
 import LoadingStudios from './Screens/LoadingStudios'
 
 const ResultadosEstudios = () => {
+    const navigation = useNavigation();
 
     const [resultStudies, setResultStudies] = useState([])
     const [queryAPI, setQueryAPI] = useState(true)
@@ -52,10 +54,36 @@ const ResultadosEstudios = () => {
                     <View key={result.id} style={{marginVertical: 6, padding: 2}}>
                         <Card>
                           <Card.Content>
-                            <Text style={styles.titleCard}>{result.Resultados}</Text>
+                            <View
+                              style={{
+                                flexDirection: 'row',
+                                justifyContent: 'space-between',
+                                alignItems: 'center',                               
+                              }}
+                            >
+                              <Text style={styles.titleCard}>{result.Folio}</Text>
+                              <IconButton
+                                icon={({size, color}) => (
+                                  <Image
+                                    source={require('../../src/icons/lapiz.png')}
+                                    style={{
+                                      width: size,
+                                      height: size ,
+                                      tintColor: color,
+                                      position: 'absolute',
+                                    }}
+                                  />
+                                )}
+                                onPress={() =>
+                                  navigation.navigate('EditResultado', {
+                                    id: result.id,
+                                  })
+                                }
+                              />
+                            </View>
+                            <Text>{result.Resultados}</Text>
                             <Text>{result.Observaciones}</Text>
                             <Text>{result.Estatus}</Text>
-                            <Text>{result.Folio}</Text>
                             <Text>{result.Fecha_Registro}</Text>
                           </Card.Content>
                         </Card>
