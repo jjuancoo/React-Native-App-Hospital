@@ -1,6 +1,6 @@
 import React, { useState, useEffect }from 'react'
 import { View, ScrollView, StyleSheet, TouchableHighlight, Image, Dimensions } from 'react-native'
-import { Text, Modal, Portal, Button } from 'react-native-paper'
+import { Text, Modal, Portal, Button, IconButton } from 'react-native-paper'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { Calendar, LocaleConfig } from 'react-native-calendars'
 import useAxios from '../../api/estudios.api'
@@ -137,68 +137,86 @@ const Home = () => {
 
   return (
     <>
-        <ScrollView>
-          <View>
-            <Text style={styles.title}>Hola, {user}</Text>
+      <ScrollView>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
+          <View style={styles.containerNames}>
+            <Text style={{fontSize: 18, color: '#64748b'}}>Bienvenido,</Text>
+            <Text style={{fontSize: 22, fontWeight: 'bold'}}>{user}</Text>
           </View>
-          <View>
-            <Text style={styles.subtitle}>Estudios realizados</Text>
-            <View>
-              <Calendar
-                theme={{
-                  backgroundColor: '#ffffff',
-                  textMonthFontWeight: 'bold',
+          <IconButton
+            icon={({size, color}) => (
+              <Image
+                source={require('../../src/icons/notificacion.png')}
+                style={{
+                  width: size,
+                  height: size,
+                  tintColor: color,
                 }}
-                markedDates={markedDates}
-                onDayPress={handleDayPress}
               />
-            </View>
-          </View>
-
+            )}
+            onPress={() =>
+              navigation.navigate('Configuracion')
+            }
+            style={{paddingRight: 12}}
+          />
+        </View>
+        <View>
+          <Text style={styles.subtitle}>Estudios realizados</Text>
           <View>
-            <Text style={styles.subtitle}>Categorias</Text>
-            <View style={styles.containerCategories}>
-                <TouchableHighlight
-                  onPress={() => navigation.navigate('Estudios')}
-                  underlayColor="transparent"
-                >
-                  <View style={styles.categories}>
-                    <Image
-                      source={require('../../src/icons/adn.png')}
-                      style={{ width: 22, height: 22 }}
-                    />
-                    <Text>Estudios  </Text>
-                  </View>
-                </TouchableHighlight>
-              <TouchableHighlight
-                onPress={() => navigation.navigate('Resultados')}
-                underlayColor="transparent"
-              >
-                <View style={styles.categories}>
-                  <Image
-                    source={require('../../src/icons/microscopio.png')}
-                    style={{ width: 22, height: 22 }}
-                  />
-                  <Text>Resultados</Text>
-                </View>
-              </TouchableHighlight>
-              <TouchableHighlight
-                onPress={() => navigation.navigate('Estudios')}
-                underlayColor="transparent"
-              >
-                <View style={styles.categories}>
-                  <Image
-                    source={require('../../src/icons/doctor.png')}
-                    style={{ width: 22, height: 22 }}
-                  />
-                  <Text>Médicos   </Text>
-                </View>
-              </TouchableHighlight>
-            </View>
+            <Calendar
+              theme={{
+                backgroundColor: '#ffffff',
+                textMonthFontWeight: 'bold',
+              }}
+              markedDates={markedDates}
+              onDayPress={handleDayPress}
+            />
           </View>
+        </View>
 
-          <View style={styles.chartContainer}>
-          <Text style={styles.subtitle}>Estadísticas por Nivel de Urgencia</Text>
+        <View>
+          <Text style={styles.subtitle}>Categorias</Text>
+          <View style={styles.containerCategories}>
+            <TouchableHighlight
+              onPress={() => navigation.navigate('Estudios')}
+              underlayColor="transparent">
+              <View style={styles.categories}>
+                <Image
+                  source={require('../../src/icons/adn.png')}
+                  style={{width: 22, height: 22}}
+                />
+                <Text>Estudios </Text>
+              </View>
+            </TouchableHighlight>
+            <TouchableHighlight
+              onPress={() => navigation.navigate('Resultados')}
+              underlayColor="transparent">
+              <View style={styles.categories}>
+                <Image
+                  source={require('../../src/icons/microscopio.png')}
+                  style={{width: 22, height: 22}}
+                />
+                <Text>Resultados</Text>
+              </View>
+            </TouchableHighlight>
+            <TouchableHighlight
+              onPress={() => navigation.navigate('Estudios')}
+              underlayColor="transparent">
+              <View style={styles.categories}>
+                <Image
+                  source={require('../../src/icons/doctor.png')}
+                  style={{width: 22, height: 22}}
+                />
+                <Text>Médicos </Text>
+              </View>
+            </TouchableHighlight>
+          </View>
+        </View>
+
+        <View style={styles.chartContainer}>
+          <Text style={styles.subtitle}>
+            Estadísticas por Nivel de Urgencia
+          </Text>
           {urgencyStats.length > 0 ? (
             <PieChart
               data={urgencyStats}
@@ -219,34 +237,42 @@ const Home = () => {
             <Text style={styles.noDataText}>No hay datos disponibles.</Text>
           )}
         </View>
-        </ScrollView>
+      </ScrollView>
 
-        <Portal>
+      <Portal>
         <Modal visible={modalVisible} onDismiss={() => setModalVisible(false)}>
           <View style={styles.modalContainer}>
             {studyDetails ? (
               <>
                 <Text style={styles.modalText}>
-                  <Text style={{ fontWeight: 'bold' }}>Estudio:</Text> {studyDetails.Tipo}
+                  <Text style={{fontWeight: 'bold'}}>Estudio:</Text>{' '}
+                  {studyDetails.Tipo}
                 </Text>
                 <Text style={styles.modalText}>
-                  <Text style={{ fontWeight: 'bold' }}>Estado:</Text> {studyDetails.Estatus}
+                  <Text style={{fontWeight: 'bold'}}>Estado:</Text>{' '}
+                  {studyDetails.Estatus}
                 </Text>
               </>
             ) : (
-              <Text style={styles.modalText}>Ningún estudio realizado para esta fecha.</Text>
+              <Text style={styles.modalText}>
+                Ningún estudio realizado para esta fecha.
+              </Text>
             )}
             <Button onPress={() => setModalVisible(false)}>Cerrar</Button>
           </View>
         </Modal>
       </Portal>
     </>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
       flex: 1,
+  },
+  containerNames: {
+    padding: 12,
+    flexDirection: 'column'
   },
   scroll: {
       marginHorizontal: 10
