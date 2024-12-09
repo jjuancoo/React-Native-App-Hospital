@@ -111,7 +111,7 @@ const Citas = () => {
         )}
         style={styles.fab}
         label="Nuevo Estudio"
-        onPress={() => console.log('Pressed')}
+        onPress={() => navigation.navigate('CreateEstudio')}
       />
     </>
   );

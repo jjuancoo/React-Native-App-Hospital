@@ -20,6 +20,7 @@ import SignUp from './views/auth/SignUp';
 //Modal
 import EditForms from './views/home/Screens/EditForms';
 import EditEstudio from './views/home/Screens/EditEstudio';
+import CreateEstudio from './views/home/Screens/CreateEstudio';
 
 const Tab = createMaterialBottomTabNavigator()
 const Stack = createNativeStackNavigator();
@@ -103,6 +104,7 @@ const RootStack = () => {
       <Stack.Screen name='MainTabs' component={AppTabs} options={{headerShown: false}}/>
       <Stack.Screen name='Modals' component={EditForms} options={{presentation: 'modal', headerTitle: '', headerTransparent: true, headerStyle: {backgroundColor: "transparent"}}} />
       <Stack.Screen name='EditEstudio' component={EditEstudio} options={{presentation: 'modal', headerTitle: '', headerTransparent: true, headerStyle: {backgroundColor: "transparent"}}} />
+      <Stack.Screen name='CreateEstudio' component={CreateEstudio} options={{presentation: 'modal', headerTitle: '', headerTransparent: true, headerStyle: {backgroundColor: "transparent"}}} />
     </Stack.Navigator>
   )
 }
