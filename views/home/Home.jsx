@@ -1,6 +1,6 @@
 import React, { useState, useEffect }from 'react'
 import { View, ScrollView, StyleSheet, TouchableHighlight, Image, Dimensions } from 'react-native'
-import { Text, Modal, Portal, Button, IconButton } from 'react-native-paper'
+import { Text, Modal, Portal, Button, IconButton, Snackbar } from 'react-native-paper'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { Calendar, LocaleConfig } from 'react-native-calendars'
 import useAxios from '../../api/estudios.api'
@@ -15,6 +15,10 @@ const Home = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [studyDetails, setStudyDetails] = useState(null);
   const [urgencyStats, setUrgencyStats] = useState([]);
+  const [visible, setVisible] = useState(false);
+
+  const onToggleSnackBar = () => setVisible(!visible);
+  const onDismissSnackBar = () => setVisible(false);
   const instanceAPI = useAxios();
 
   const navigation = useNavigation()
@@ -138,10 +142,19 @@ const Home = () => {
   return (
     <>
       <ScrollView>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
-          <View style={styles.containerNames}>
-            <Text style={{fontSize: 18, color: '#64748b'}}>Bienvenido,</Text>
-            <Text style={{fontSize: 22, fontWeight: 'bold'}}>{user}</Text>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 12}}>
+          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            <Image
+              source={require('../../src/icons/user.png')}
+              style={{
+                width: 50,
+                height: 50
+              }}
+            />
+            <View style={styles.containerNames}>
+              <Text style={{fontSize: 18, color: '#64748b'}}>Bienvenido,</Text>
+              <Text style={{fontSize: 22, fontWeight: 'bold'}}>{user}</Text>
+            </View>
           </View>
           <IconButton
             icon={({size, color}) => (
@@ -154,9 +167,7 @@ const Home = () => {
                 }}
               />
             )}
-            onPress={() =>
-              navigation.navigate('Configuracion')
-            }
+            onPress={onToggleSnackBar}
             style={{paddingRight: 12}}
           />
         </View>
@@ -238,6 +249,15 @@ const Home = () => {
           )}
         </View>
       </ScrollView>
+
+      <Snackbar
+        visible={visible}
+        onDismiss={onDismissSnackBar}
+        action={{
+          label: 'Cerrar',
+        }}>
+        Sin notificaciones
+      </Snackbar>
 
       <Portal>
         <Modal visible={modalVisible} onDismiss={() => setModalVisible(false)}>
