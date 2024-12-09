@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { View, StyleSheet, ScrollView } from 'react-native'
-import { Button, Text, TextInput } from 'react-native-paper'
+import { Button, Text, TextInput, Dialog, Portal } from 'react-native-paper'
 import { useNavigation } from '@react-navigation/native'
 import useAxios from '../../../api/estudios.api'
 
@@ -17,9 +17,18 @@ const NuevoResultado = () => {
         Observaciones: '',
         Estatus: ''
     });
+    const [alert, setAlert] = useState(false)
     const axiosInstance = useAxios()
 
     const nuevoResultado = async () => {
+        //Validar el objeto
+        for(const key in resultado) {
+            const value = resultado[key];
+            if(value === "" || value === 0) {
+                setAlert(true)
+                return;
+            }
+        }
         try {
             const resultadoCompleto = {
                 ...resultado,
@@ -95,6 +104,21 @@ const NuevoResultado = () => {
                 </Button>
             </View>
         </View>
+
+        <Portal>
+            <Dialog
+            visible={alert}
+            onDismiss={() => setAlert(false)}
+            >
+            <Dialog.Title>Error</Dialog.Title>
+            <Dialog.Content>
+                <Text variant='bodyMedium'>Todos los campos son obligatorios</Text>
+            </Dialog.Content>
+            <Dialog.Actions>
+                <Button onPress={() => setAlert(false)}>Cerrar</Button>
+            </Dialog.Actions>
+            </Dialog>
+        </Portal>
     </ScrollView>
   )
 }
