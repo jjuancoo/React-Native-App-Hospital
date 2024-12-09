@@ -17,6 +17,11 @@ import Welcome from './views/auth/Welcome';
 import SignIn from './views/auth/SignIn';
 import SignUp from './views/auth/SignUp';
 
+//Modal
+import EditForms from './views/home/Screens/EditForms';
+import EditEstudio from './views/home/Screens/EditEstudio';
+import CreateEstudio from './views/home/Screens/CreateEstudio';
+
 const Tab = createMaterialBottomTabNavigator()
 const Stack = createNativeStackNavigator();
 
@@ -93,6 +98,17 @@ const AppTabs = () => {
   )
 };
 
+const RootStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name='MainTabs' component={AppTabs} options={{headerShown: false}}/>
+      <Stack.Screen name='Modals' component={EditForms} options={{presentation: 'modal', headerTitle: '', headerTransparent: true, headerStyle: {backgroundColor: "transparent"}}} />
+      <Stack.Screen name='EditEstudio' component={EditEstudio} options={{presentation: 'modal', headerTitle: '', headerTransparent: true, headerStyle: {backgroundColor: "transparent"}}} />
+      <Stack.Screen name='CreateEstudio' component={CreateEstudio} options={{presentation: 'modal', headerTitle: '', headerTransparent: true, headerStyle: {backgroundColor: "transparent"}}} />
+    </Stack.Navigator>
+  )
+}
+
 const MainNavigator = () => {
   const { isAuthenticated } = useAuth();
   const [isLoading, setIsLoading] = useState(true);
@@ -111,7 +127,13 @@ const MainNavigator = () => {
   }
 
   return (
-      isAuthenticated ? <AppTabs /> : <AuthStack />
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      {isAuthenticated ? (
+        <Stack.Screen name="Root" component={RootStack} />
+      ) : (
+        <Stack.Screen name="AuthStack" component={AuthStack} />
+      )}
+    </Stack.Navigator>
   );
 };
 
@@ -130,7 +152,7 @@ function App(): React.JSX.Element {
     <AuthProvider>
       <Provider>
         <NavigationContainer>
-        <MainNavigator />
+          <MainNavigator />
         </NavigationContainer>
       </Provider>
     </AuthProvider>

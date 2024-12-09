@@ -36,8 +36,8 @@ const SignIn = () => {
           //Almacenar los datos en el storage
           // Almacenar el token y el correo en AsyncStorage
           AsyncStorage.setItem('token', token);
-          AsyncStorage.setItem('correo', Correo_Electronico);
-          console.log('Token y correo almacenados correctamente');
+          AsyncStorage.setItem('nombre', Nombre_Usuario);
+          console.log('Token y nombre almacenados correctamente');
 
           signIn(token);
         })

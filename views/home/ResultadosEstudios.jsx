@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import { View, ScrollView, StyleSheet, Image } from 'react-native'
-import { Text, Card, FAB, ActivityIndicator } from 'react-native-paper'
+import { Text, Card, FAB } from 'react-native-paper'
 import useAxios from '../../api/estudios.api'
+import LoadingStudios from './Screens/LoadingStudios'
 
 const ResultadosEstudios = () => {
 
@@ -26,28 +27,31 @@ const ResultadosEstudios = () => {
           <Text style={styles.title}>Resultados de estudios</Text>
           <View>
             {resultStudies.length == 0 ? (
-                <View>
-                    <Image
-                        source={require('../../src/img/no_data.png')}
-                        style={styles.image}
-                    />
-                    <ActivityIndicator
-                      animating={true}
-                      style={{marginBottom: 12}}
-                    />
-                    <Text style={styles.favorite}>Se estan cargando los resultados...</Text>
-                </View>
+              <LoadingStudios/>
             ) : (
                 resultStudies.map((result) => (
-                    <View key={result.id}>
-                        <Text>{result.Resultados}</Text>
+                    <View key={result.id} style={{marginVertical: 6, padding: 2}}>
+                        <Card>
+                          <Card.Content>
+                            <Text style={styles.titleCard}>{result.Resultados}</Text>
+                            <Text>{result.Observaciones}</Text>
+                            <Text>{result.Estatus}</Text>
+                            <Text>{result.Folio}</Text>
+                            <Text>{result.Fecha_Registro}</Text>
+                          </Card.Content>
+                        </Card>
                     </View>
                 ))
             )}
           </View>
         </ScrollView>
         <FAB
-          icon="plus"
+          icon={({ size, color }) => (
+            <Image
+              source={require('../../src/icons/mas.png')}
+              style={{ width: size, height: size, tintColor: color }}
+            />
+          )}
           style={styles.fab}
           label='Nuevo Resultado'
           onPress={() => console.log('Pressed')}
@@ -74,17 +78,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 4,
     padding: 4,
-  },
-  image: {
-    width: 250,
-    height: 250,
-    marginBottom: 20,
-    resizeMode: 'contain',
-    alignSelf: 'center',
-  },
-  favorite: {
-    textAlign: 'center',
-    fontSize: 20,
   },
   fab: {
     position: 'absolute',
