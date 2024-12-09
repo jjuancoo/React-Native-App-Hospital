@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { View, ScrollView, StyleSheet, Image } from 'react-native'
+import { View, ScrollView, StyleSheet, Image, TouchableHighlight } from 'react-native'
 import { Text, Card, FAB, IconButton } from 'react-native-paper'
 import useAxios from '../../api/estudios.api'
 import { useNavigation } from '@react-navigation/native'
@@ -52,6 +52,12 @@ const ResultadosEstudios = () => {
             ) : (
                 resultStudies.map((result) => (
                     <View key={result.id} style={{marginVertical: 6, padding: 2}}>
+                      <TouchableHighlight
+                        onPress={() =>
+                          navigation.navigate('DeleteResultado', {id: result.id})
+                        }
+                        underlayColor="transparent"
+                      >
                         <Card>
                           <Card.Content>
                             <View
@@ -87,6 +93,7 @@ const ResultadosEstudios = () => {
                             <Text>{result.Fecha_Registro}</Text>
                           </Card.Content>
                         </Card>
+                      </TouchableHighlight>
                     </View>
                 ))
             )}
