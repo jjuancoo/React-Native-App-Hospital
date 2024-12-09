@@ -1,10 +1,11 @@
 import React, { useState, useEffect }from 'react'
-import { View, ScrollView, StyleSheet, TouchableHighlight, Image } from 'react-native'
+import { View, ScrollView, StyleSheet, TouchableHighlight, Image, Dimensions } from 'react-native'
 import { Text, Modal, Portal, Button } from 'react-native-paper'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { Calendar, LocaleConfig } from 'react-native-calendars'
 import useAxios from '../../api/estudios.api'
 import { useNavigation } from '@react-navigation/native'
+import { PieChart } from 'react-native-chart-kit';
 
 const Home = () => {
 
@@ -13,6 +14,7 @@ const Home = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
   const [studyDetails, setStudyDetails] = useState(null);
+  const [urgencyStats, setUrgencyStats] = useState([]);
   const instanceAPI = useAxios();
 
   const navigation = useNavigation()
@@ -61,6 +63,47 @@ const Home = () => {
 
     fetchDates();
   }, []);
+
+  useEffect(() => {
+    const fetchUrgencyStats = async () => {
+      try {
+        const response = await instanceAPI.get('/estudios');
+        const estudios = response.data;
+
+        // Agrupar por nivel de urgencia
+        const stats = estudios.reduce((acc, estudio) => {
+          const level = estudio.Nivel_Urgencia || 'Desconocido';
+          acc[level] = (acc[level] || 0) + 1;
+          return acc;
+        }, {});
+
+        // Convertir en un array para el gráfico
+        const chartData = Object.keys(stats).map((key) => ({
+          name: key,
+          population: stats[key],
+          color: getRandomColor(),
+          legendFontColor: '#7F7F7F',
+          legendFontSize: 15,
+        }));
+
+        setUrgencyStats(chartData);
+      } catch (error) {
+        console.error('Error fetching urgency stats:', error);
+      }
+    };
+
+    fetchUrgencyStats();
+  }, []);
+
+   // Función para generar colores aleatorios
+   const getRandomColor = () => {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  };
 
   const handleDayPress = (day) => {
     const date = day.dateString;
@@ -153,6 +196,29 @@ const Home = () => {
               </TouchableHighlight>
             </View>
           </View>
+
+          <View style={styles.chartContainer}>
+          <Text style={styles.subtitle}>Estadísticas por Nivel de Urgencia</Text>
+          {urgencyStats.length > 0 ? (
+            <PieChart
+              data={urgencyStats}
+              width={Dimensions.get('window').width - 40}
+              height={220}
+              chartConfig={{
+                backgroundColor: '#ffffff',
+                backgroundGradientFrom: '#f5f5f5',
+                backgroundGradientTo: '#f5f5f5',
+                color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+              }}
+              accessor="population"
+              backgroundColor="transparent"
+              paddingLeft="15"
+              absolute
+            />
+          ) : (
+            <Text style={styles.noDataText}>No hay datos disponibles.</Text>
+          )}
+        </View>
         </ScrollView>
 
         <Portal>
@@ -222,6 +288,16 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     borderRadius: 10,
     alignItems: 'center',
+  },
+  chartContainer: {
+    marginHorizontal: 20,
+    marginVertical: 20,
+    alignItems: 'center',
+  },
+  noDataText: {
+    fontSize: 16,
+    textAlign: 'center',
+    marginTop: 20,
   },
 })
 
