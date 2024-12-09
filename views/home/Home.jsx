@@ -1,9 +1,10 @@
 import React, { useState, useEffect }from 'react'
-import { View, ScrollView, StyleSheet } from 'react-native'
+import { View, ScrollView, StyleSheet, TouchableHighlight, Image } from 'react-native'
 import { Text, Modal, Portal, Button } from 'react-native-paper'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { Calendar, LocaleConfig } from 'react-native-calendars'
 import useAxios from '../../api/estudios.api'
+import { useNavigation } from '@react-navigation/native'
 
 const Home = () => {
 
@@ -13,6 +14,8 @@ const Home = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [studyDetails, setStudyDetails] = useState(null);
   const instanceAPI = useAxios();
+
+  const navigation = useNavigation()
 
   //Obtiene el nombre del usuario
   useEffect(() => {
@@ -108,7 +111,50 @@ const Home = () => {
               />
             </View>
           </View>
+
+          <View>
+            <Text style={styles.subtitle}>Categorias</Text>
+            <View style={styles.containerCategories}>
+                <TouchableHighlight
+                  onPress={() => navigation.navigate('Estudios')}
+                  underlayColor="transparent"
+                >
+                  <View style={styles.categories}>
+                    <Image
+                      source={require('../../src/icons/adn.png')}
+                      style={{ width: 22, height: 22 }}
+                    />
+                    <Text>Estudios  </Text>
+                  </View>
+                </TouchableHighlight>
+              <TouchableHighlight
+                onPress={() => navigation.navigate('Resultados')}
+                underlayColor="transparent"
+              >
+                <View style={styles.categories}>
+                  <Image
+                    source={require('../../src/icons/microscopio.png')}
+                    style={{ width: 22, height: 22 }}
+                  />
+                  <Text>Resultados</Text>
+                </View>
+              </TouchableHighlight>
+              <TouchableHighlight
+                onPress={() => navigation.navigate('Estudios')}
+                underlayColor="transparent"
+              >
+                <View style={styles.categories}>
+                  <Image
+                    source={require('../../src/icons/doctor.png')}
+                    style={{ width: 22, height: 22 }}
+                  />
+                  <Text>Médicos   </Text>
+                </View>
+              </TouchableHighlight>
+            </View>
+          </View>
         </ScrollView>
+
         <Portal>
         <Modal visible={modalVisible} onDismiss={() => setModalVisible(false)}>
           <View style={styles.modalContainer}>
@@ -163,6 +209,19 @@ const styles = StyleSheet.create({
   modalText: {
     fontSize: 16,
     marginBottom: 10,
+  },
+  containerCategories: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    flexWrap: 'wrap',
+  },
+  categories: {
+    backgroundColor: '#d1d5db',
+    padding: 30,
+    marginBottom: 10,
+    borderRadius: 10,
+    alignItems: 'center',
   },
 })
 
