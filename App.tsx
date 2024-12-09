@@ -25,6 +25,7 @@ import CreateEstudio from './views/home/Screens/CreateEstudio';
 //Modal resultado
 import EditResultado from './views/home/Screens/EditResultado';
 import DeleteResultado from './views/home/Screens/DeleteResultado';
+import NuevoResultado from './views/home/Screens/NuevoResultado';
 
 const Tab = createMaterialBottomTabNavigator()
 const Stack = createNativeStackNavigator();
@@ -111,6 +112,7 @@ const RootStack = () => {
       <Stack.Screen name='CreateEstudio' component={CreateEstudio} options={{presentation: 'modal', headerTitle: '', headerTransparent: true, headerStyle: {backgroundColor: "transparent"}}} />
       <Stack.Screen name='EditResultado' component={EditResultado} options={{presentation: 'modal', headerTitle: '', headerTransparent: true, headerStyle: {backgroundColor: "transparent"}}} />
       <Stack.Screen name='DeleteResultado' component={DeleteResultado} options={{presentation: 'modal', headerTitle: '', headerTransparent: true, headerStyle: {backgroundColor: "transparent"}}} />
+      <Stack.Screen name='NuevoResultado' component={NuevoResultado} options={{presentation: 'modal', headerTitle: '', headerTransparent: true, headerStyle: {backgroundColor: "transparent"}}} />
     </Stack.Navigator>
   )
 }

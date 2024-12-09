@@ -108,7 +108,7 @@ const ResultadosEstudios = () => {
           )}
           style={styles.fab}
           label='Nuevo Resultado'
-          onPress={() => console.log('Pressed')}
+          onPress={() => navigation.navigate('NuevoResultado')}
         />
     </View>
   )
