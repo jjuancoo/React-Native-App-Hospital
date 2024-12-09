@@ -96,7 +96,7 @@ const Home = () => {
             <Text style={styles.title}>Hola, {user}</Text>
           </View>
           <View>
-            <Text>Proximos estudios</Text>
+            <Text style={styles.subtitle}>Estudios realizados</Text>
             <View>
               <Calendar
                 theme={{
@@ -144,6 +144,12 @@ const styles = StyleSheet.create({
       fontWeight: '500',
       marginBottom: 8,
       padding: 10
+  },
+  subtitle: {
+    marginVertical: 10,
+    paddingHorizontal: 10,
+    fontWeight: 'bold',
+    fontSize: 20,
   },
   buttonExit: {
       marginHorizontal: 10
