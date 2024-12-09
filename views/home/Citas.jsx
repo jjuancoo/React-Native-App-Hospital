@@ -4,6 +4,7 @@ import { View, ScrollView, StyleSheet, TouchableHighlight, Image } from 'react-n
 import { Text, Card, FAB, IconButton } from 'react-native-paper'
 import useAxios from '../../api/estudios.api'
 import LoadingStudios from './Screens/LoadingStudios'
+import { formatearFecha } from '../../components'
 
 const Citas = () => {
 
@@ -91,7 +92,7 @@ const Citas = () => {
                         <Text>Costo: {studio.Total_Costo}</Text>
                         <Text>Dirigido a: {studio.Dirigido_A}</Text>
                         <Text>Observaciones: {studio.Observaciones}</Text>
-                        <Text>Creada: {studio.Fecha_Registro}</Text>
+                        <Text>Creada: {formatearFecha(studio.Fecha_Registro)}</Text>
                         <Text>ID: {studio.id}</Text>
                       </Card.Content>
                     </Card>

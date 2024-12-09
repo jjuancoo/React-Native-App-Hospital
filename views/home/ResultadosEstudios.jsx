@@ -4,6 +4,7 @@ import { Text, Card, FAB, IconButton } from 'react-native-paper'
 import useAxios from '../../api/estudios.api'
 import { useNavigation } from '@react-navigation/native'
 import LoadingStudios from './Screens/LoadingStudios'
+import { formatearFecha } from '../../components'
 
 const ResultadosEstudios = () => {
     const navigation = useNavigation();
@@ -90,7 +91,7 @@ const ResultadosEstudios = () => {
                             <Text>{result.Resultados}</Text>
                             <Text>{result.Observaciones}</Text>
                             <Text>{result.Estatus}</Text>
-                            <Text>{result.Fecha_Registro}</Text>
+                            <Text>{formatearFecha(result.Fecha_Registro)}</Text>
                           </Card.Content>
                         </Card>
                       </TouchableHighlight>
