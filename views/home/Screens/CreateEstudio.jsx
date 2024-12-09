@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { View, StyleSheet, ScrollView } from 'react-native'
-import { Button, Text, TextInput } from 'react-native-paper'
+import { Button, Text, TextInput, Dialog, Portal } from 'react-native-paper'
 import { useNavigation } from '@react-navigation/native'
 import useAxios from '../../../api/estudios.api'
 
@@ -19,9 +19,18 @@ const CreateEstudio = () => {
         Dirigido_A: '',
         Observaciones: ''
     });
+    const [alert, setAlert] = useState(false)
     const axiosInstance = useAxios()
 
     const nuevoEstudio = async () => {
+        //Validar el objeto
+        for(const key in estudio) {
+            const value = estudio[key];
+            if(value === "" || value === 0) {
+                setAlert(true)
+                return;
+            }
+        }
         try {
             const estudioCompleto = {
                 ...estudio,
@@ -100,6 +109,21 @@ const CreateEstudio = () => {
                 </Button>
             </View>
         </View>
+
+        <Portal>
+            <Dialog
+            visible={alert}
+            onDismiss={() => setAlert(false)}
+            >
+            <Dialog.Title>Error</Dialog.Title>
+            <Dialog.Content>
+                <Text variant='bodyMedium'>Error Tdos los campos son obligatorios</Text>
+            </Dialog.Content>
+            <Dialog.Actions>
+                <Button onPress={() => setAlert(false)}>Cerrar</Button>
+            </Dialog.Actions>
+            </Dialog>
+        </Portal>
     </ScrollView>
   )
 }
