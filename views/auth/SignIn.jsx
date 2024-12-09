@@ -7,6 +7,7 @@ import { useAuth } from '../../context/AuthContext'
 
 const SignIn = () => {
 
+  //Creando los estados
   const [Nombre_Usuario, setNombre_Usuario] = useState('')
   const [Correo_Electronico, setCorreo_Electronico] = useState('')
   const [Contrasena, setContrasena] = useState('')
@@ -43,10 +44,6 @@ const SignIn = () => {
         .catch(function (error) {
           console.log('Este es el: ', error);
         });
-
-      // setTimeout(() => {
-      //   AsyncStorage.clear().then(() => {console.log('Se vacion el async')})
-      // }, 5000);
     } catch (error) {
       console.log(error)
     }

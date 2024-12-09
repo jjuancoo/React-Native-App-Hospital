@@ -5,6 +5,7 @@ import useAxios from '../../api/estudios.api'
 
 const Citas = () => {
 
+  //Creando el estado
   const [studios, setStudios] = useState([]);
   const axiosInstance = useAxios();
 
