@@ -56,7 +56,7 @@ const Citas = () => {
                                 style={{ width: size, height: size, tintColor: color }}
                               />
                             )}
-                            onPress={() => console.log('Boton con icono')}
+                            onPress={() => navigation.navigate('EditEstudio', {id: studio.id})}
                           />
                         </View>
                         <Text>Estado: {studio.Estatus}</Text>
