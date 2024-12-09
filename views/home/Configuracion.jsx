@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { View, StyleSheet, ScrollView, TouchableHighlight, Image} from 'react-native'
-import { Text, Button, Dialog, Portal, Divider } from 'react-native-paper'
+import { Text, Button, Dialog, Portal, Divider, Snackbar } from 'react-native-paper'
 import { useAuth } from '../../context/AuthContext'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { useNavigation } from '@react-navigation/native';
@@ -25,6 +25,10 @@ const Configuracion = () => {
 
      //Mostrar el dialog
     const [alert, setAlert] = useState(false)
+    const [visible, setVisible] = React.useState(false);
+
+    const onToggleSnackBar = () => setVisible(!visible);
+    const onDismissSnackBar = () => setVisible(false);
 
     const {signOut} = useAuth();
 
@@ -34,73 +38,85 @@ const Configuracion = () => {
     }
 
   return (
-    <View>
-      <ScrollView style={styles.scroll}>
-        <Text style={styles.title}>Configuración</Text>
+    <>
+      <View>
+        <ScrollView style={styles.scroll}>
+          <Text style={styles.title}>Configuración</Text>
 
-        <View style={{marginBottom: 12, padding: 12}}>
-          <Text style={styles.subtitle}>Pefil</Text>
-          {items.map((item, index) => (
-            <>
-              <TouchableHighlight 
-                key={index}
-                underlayColor="transparent"
-                style={{paddingVertical: 14}}
-                onPress={() => console.log('No disponible aún')}
-              >
-                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                  <Image
-                    source={icons[item.icon]}
-                    style={{
-                      width: 22,
-                      height: 22,
-                      marginRight: 14,
-                    }}
-                  />
-                  <View>
-                    <Text style={styles.itemTitle}>{item.title}</Text>
-                    <Text style={styles.itemSubtitle}>{item.subtitle}</Text>
+          <View style={{marginBottom: 12, padding: 12}}>
+            <Text style={styles.subtitle}>Pefil</Text>
+            {items.map((item, index) => (
+              <>
+                <TouchableHighlight 
+                  key={index}
+                  underlayColor="transparent"
+                  style={{paddingVertical: 14}}
+                  onPress={onToggleSnackBar}
+                >
+                  <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                    <Image
+                      source={icons[item.icon]}
+                      style={{
+                        width: 22,
+                        height: 22,
+                        marginRight: 14,
+                      }}
+                    />
+                    <View>
+                      <Text style={styles.itemTitle}>{item.title}</Text>
+                      <Text style={styles.itemSubtitle}>{item.subtitle}</Text>
+                    </View>
                   </View>
-                </View>
-              </TouchableHighlight>
-              <Divider/>
-            </>
-          ))}
-        </View>
+                </TouchableHighlight>
+                <Divider/>
+              </>
+            ))}
+          </View>
 
-        <View>
-          <Text style={styles.subtitle}>Cuenta</Text>
-          <Button mode="outlined" onPress={cerrarSesion}>
-            Cerrar Sesión
-          </Button>
-        </View>
-      </ScrollView>
+          <View>
+            <Text style={styles.subtitle}>Cuenta</Text>
+            <Button mode="outlined" onPress={cerrarSesion}>
+              Cerrar Sesión
+            </Button>
+          </View>
+        </ScrollView>
 
-      <Portal>
-        <Dialog visible={alert} onDismiss={() => setAlert(false)}>
-          <Dialog.Title>Cerrar Sesión</Dialog.Title>
-          <Dialog.Content>
-            <Text variant="bodyMedium">¿Seguro que quieres salir?</Text>
-          </Dialog.Content>
-          <Dialog.Actions>
-            <Button
-              onPress={() => {
-                setAlert(false);
-              }}>
-              Cerrar
-            </Button>
-            <Button
-              onPress={() => {
-                signOut();
-                AsyncStorage.clear();
-                console.log('Sesion cerrada');
-              }}>
-              Salir
-            </Button>
-          </Dialog.Actions>
-        </Dialog>
-      </Portal>
-    </View>
+        <Portal>
+          <Dialog visible={alert} onDismiss={() => setAlert(false)}>
+            <Dialog.Title>Cerrar Sesión</Dialog.Title>
+            <Dialog.Content>
+              <Text variant="bodyMedium">¿Seguro que quieres salir?</Text>
+            </Dialog.Content>
+            <Dialog.Actions>
+              <Button
+                onPress={() => {
+                  setAlert(false);
+                }}>
+                Cerrar
+              </Button>
+              <Button
+                onPress={() => {
+                  signOut();
+                  AsyncStorage.clear();
+                  console.log('Sesion cerrada');
+                }}>
+                Salir
+              </Button>
+            </Dialog.Actions>
+          </Dialog>
+        </Portal>
+      </View>
+
+      <Snackbar
+        visible={visible}
+        onDismiss={onDismissSnackBar}
+        action={{
+          label: 'Cerrar'
+        }}
+      >
+        Disponible proximamente
+      </Snackbar>
+    </>
   );
 }
 
