@@ -52,9 +52,6 @@ const SignIn = () => {
     }
   }
 
-  //Limpiar el async storage
-  const cleanStorage = () => AsyncStorage.clear().then(() => {console.log('Storage limpiado')});
-
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Bienvenido</Text>
@@ -97,13 +94,6 @@ const SignIn = () => {
         style={styles.button}
         onPress={() => {authenticateUser()}}>
         Ingresar
-      </Button>
-
-      <Button
-        mode="text"
-        style={styles.button}
-        onPress={() => {cleanStorage()}}>
-        Limpiar Credenciales
       </Button>
 
       <Portal>
