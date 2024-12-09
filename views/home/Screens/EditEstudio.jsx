@@ -16,7 +16,7 @@ const EditEstudio = ({ route }) => {
 
     const editStudio = async () => {
         try {
-            await axiosInstance.put(`/estudios/${id}`, user)
+            await axiosInstance.put(`/estudios/${id}`, user);
             navigation.navigate('Estudios')
         } catch (error) {
             console.error(error)

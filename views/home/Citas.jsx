@@ -28,12 +28,27 @@ const Citas = () => {
       fetchStudios();
     }
   }, [queryAPI]);
+
+  const refreshStudio = () => {
+    setQueryAPI(true);
+  }
   
   return (
     <>
       <ScrollView style={styles.scroll}>
         <View>
-          <Text style={styles.title}>Estudios</Text>
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 2}}>
+            <Text style={styles.title}>Estudios</Text>
+            <IconButton
+              icon={({size, color}) => (
+                <Image
+                  source={require('../../src/icons/refrescar.png')}
+                  style={{width: size, height: size, tintColor: color}}
+                />
+              )}
+              onPress={() => refreshStudio()}
+            />
+          </View>
           <View>
             {studios.length === 0 ? (
               <LoadingStudios />
@@ -47,16 +62,29 @@ const Citas = () => {
                     underlayColor="transparent">
                     <Card>
                       <Card.Content>
-                        <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <View
+                          style={{
+                            flexDirection: 'row',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                          }}>
                           <Text style={styles.titleCard}>{studio.Tipo}</Text>
                           <IconButton
-                            icon={({ size, color }) => (
+                            icon={({size, color}) => (
                               <Image
                                 source={require('../../src/icons/lapiz.png')}
-                                style={{ width: size, height: size, tintColor: color }}
+                                style={{
+                                  width: size,
+                                  height: size,
+                                  tintColor: color,
+                                }}
                               />
                             )}
-                            onPress={() => navigation.navigate('EditEstudio', {id: studio.id})}
+                            onPress={() =>
+                              navigation.navigate('EditEstudio', {
+                                id: studio.id,
+                              })
+                            }
                           />
                         </View>
                         <Text>Estado: {studio.Estatus}</Text>
@@ -75,10 +103,10 @@ const Citas = () => {
         </View>
       </ScrollView>
       <FAB
-        icon={({ size, color }) => (
+        icon={({size, color}) => (
           <Image
             source={require('../../src/icons/mas.png')}
-            style={{ width: size, height: size, tintColor: color }}
+            style={{width: size, height: size, tintColor: color}}
           />
         )}
         style={styles.fab}
