@@ -7,7 +7,7 @@ import { useAuth } from '../../context/AuthContext'
 
 const SignIn = () => {
 
-  //Creando los estados
+  //Creando los es
   const [Nombre_Usuario, setNombre_Usuario] = useState('')
   const [Correo_Electronico, setCorreo_Electronico] = useState('')
   const [Contrasena, setContrasena] = useState('')
@@ -36,8 +36,8 @@ const SignIn = () => {
           //Almacenar los datos en el storage
           // Almacenar el token y el correo en AsyncStorage
           AsyncStorage.setItem('token', token);
-          AsyncStorage.setItem('nombre', Nombre_Usuario);
-          console.log('Token y nombre almacenados correctamente');
+          AsyncStorage.setItem('correo', Correo_Electronico);
+          console.log('Token y correo almacenados correctamente');
 
           signIn(token);
         })
