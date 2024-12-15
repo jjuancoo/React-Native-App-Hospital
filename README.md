@@ -212,6 +212,8 @@ Este código es un componente de React Native llamado Citas que muestra una list
 ✔️Muestra la lista de estudios en tarjetas con información relevante.<br>
 ✔️Permite al usuario presionar un botón flotante para agregar nuevos estudios (aunque aún no está implementada la funcionalidad completa para esta acción).<br><br>
 
+### Link al repositorio del Back-end
+
 ### ⚕️CONFIGURACION
 Se utiliza para mostrar una pantalla de configuración de usuario, donde el usuario puede editar su perfil, cambiar su contraseña, y cerrar sesión. Además, incluye un cuadro de diálogo de confirmación para cerrar sesión.<br>
 <a href="https://ibb.co/zxH0jqj"><img src="https://i.ibb.co/1QJwhFh/Captura-de-pantalla-2024-11-24-122937.png" alt="Captura-de-pantalla-2024-11-24-122937" border="0"></a><br>
