@@ -213,6 +213,7 @@ Este código es un componente de React Native llamado Citas que muestra una list
 ✔️Permite al usuario presionar un botón flotante para agregar nuevos estudios (aunque aún no está implementada la funcionalidad completa para esta acción).<br><br>
 
 ### Link al repositorio del Back-end
+https://github.com/MandoCV/PrivilegeCare-Deploy
 
 ### ⚕️CONFIGURACION
 Se utiliza para mostrar una pantalla de configuración de usuario, donde el usuario puede editar su perfil, cambiar su contraseña, y cerrar sesión. Además, incluye un cuadro de diálogo de confirmación para cerrar sesión.<br>
