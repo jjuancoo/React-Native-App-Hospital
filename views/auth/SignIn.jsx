@@ -15,6 +15,7 @@ const SignIn = () => {
 
   //Mostrar el dialog
   const [alert, setAlert] = useState(false)
+  const [authAlert, setAuthAlert] = useState({})
 
   //Validacion
   const authenticateUser = async () => {
@@ -31,13 +32,10 @@ const SignIn = () => {
         .post(url, user)
         .then(response => {
           const token = response.data;
-          console.log(token);
           //Almacenar los datos en el storage
           // Almacenar el token y el correo en AsyncStorage
           AsyncStorage.setItem('token', token);
           AsyncStorage.setItem('nombre', Nombre_Usuario);
-          console.log('Token y nombre almacenados correctamente');
-
           signIn(token);
         })
         .catch(function (error) {
@@ -48,7 +46,8 @@ const SignIn = () => {
       //   AsyncStorage.clear().then(() => {console.log('Se vacion el async')})
       // }, 5000);
     } catch (error) {
-      console.log(error)
+      const authError = new Error(error)
+      setAlert(true);
     }
   }
 
@@ -107,6 +106,21 @@ const SignIn = () => {
         </Dialog.Content>
         <Dialog.Actions>
           <Button onPress={() => setAlert(false)}>Cerrar</Button>
+        </Dialog.Actions>
+        </Dialog>
+      </Portal>
+
+      <Portal>
+        <Dialog
+          visible={authAlert}
+          onDismiss={() => setAuthAlert(false)}
+        >
+        <Dialog.Title>Error</Dialog.Title>
+        <Dialog.Content>
+          <Text variant='bodyMedium'>{authError}</Text>
+        </Dialog.Content>
+        <Dialog.Actions>
+          <Button onPress={() => setAuthAlert(false)}>Cerrar</Button>
         </Dialog.Actions>
         </Dialog>
       </Portal>
