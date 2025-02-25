@@ -47,6 +47,7 @@ const SignIn = () => {
       // }, 5000);
     } catch (error) {
       const authError = new Error(error)
+      console.log(error)
       setAlert(true);
     }
   }
