@@ -15,7 +15,9 @@ export const AuthProvider = ({ children }) => {
       //Verifica si hay un token almacenado en el async storage
       const storedToken = await AsyncStorage.getItem('token');
       if(storedToken){
+        //Asigna el token
         setToken(storedToken)
+        //Autentica al token y al usuario
         setIsAuthenticated(true);
       }
     };
