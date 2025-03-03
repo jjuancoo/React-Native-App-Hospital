@@ -4,41 +4,39 @@ import { Button, Text, TextInput, Dialog, Portal } from 'react-native-paper'
 import { useNavigation } from '@react-navigation/native'
 import useAxios from '../../../api/estudios.api'
 
-const CreateEstudio = () => {
-
+const NuevoResultado = () => {
     const navigation = useNavigation();
 
     //Definiendo los estados
-    const [estudio, setEstudio] = useState({
-        Tipo: '',
-        Nivel_Urgencia: '',
-        Solicitud_ID: 0,
-        Consumibles_ID: 0,
-        Estatus: '',
-        Total_Costo: 0,
-        Dirigido_A: '',
-        Observaciones: ''
+    const [resultado, setResultado] = useState({
+        Paciente_ID: 0,
+        Personal_Medico_ID: 0,
+        Estudio_ID: 0,
+        Folio: '',
+        Resultados: '',
+        Observaciones: '',
+        Estatus: ''
     });
     const [alert, setAlert] = useState(false)
     const axiosInstance = useAxios()
 
-    const nuevoEstudio = async () => {
+    const nuevoResultado = async () => {
         //Validar el objeto
-        for(const key in estudio) {
-            const value = estudio[key];
+        for(const key in resultado) {
+            const value = resultado[key];
             if(value === "" || value === 0) {
                 setAlert(true)
                 return;
             }
         }
         try {
-            const estudioCompleto = {
-                ...estudio,
+            const resultadoCompleto = {
+                ...resultado,
                 Fecha_Registro: new Date().toISOString(),
                 Fecha_Actualizacion: new Date().toISOString(),
             };
-            await axiosInstance.post('/estudios', estudioCompleto)
-            navigation.navigate('Estudios')
+            await axiosInstance.post('/resultados_estudios', resultadoCompleto)
+            navigation.navigate('Resultados')
         } catch (error) {
             console.error('Error creando estudio:', error)
         }
@@ -47,63 +45,60 @@ const CreateEstudio = () => {
   return (
     <ScrollView>
         <View style={styles.container}>
-            <Text style={styles.title}>Nuevo estudio</Text>
+            <Text style={styles.title}>Nuevo resultado</Text>
             <View style={styles.form}>
                 <TextInput
-                    label='Tipo de Estudio'
+                    label='Identificador del Paciente'
                     mode='outlined'
                     style={styles.textInput}
                     onChangeText={value => {
-                        setEstudio({...estudio, Tipo: value })
+                        setResultado({...resultado, Paciente_ID: value })
                     }}
+                />
+                <TextInput
+                    label='Identicador del médico'
+                    mode='outlined'
+                    multilinex
+                    style={styles.textInput}
+                    onChangeText={value => setResultado({...resultado, Personal_Medico_ID: value})}
+                />
+                <TextInput
+                    label='Identificador del Estudio'
+                    mode='outlined'
+                    style={styles.textInput}
+                    onChangeText={value => setResultado({...resultado, Solicitud_ID: value})}
+                />
+                <TextInput
+                    label='Folio'
+                    mode='outlined'
+                    style={styles.textInput}
+                    onChangeText={value => setResultado({...resultado, Folio: value})}
+                />
+                <TextInput
+                    label='Resultados'
+                    mode='outlined'
+                    multiline
+                    style={styles.textInput}
+                    onChangeText={value => setResultado({...resultado, Resultados: value})}
                 />
                 <TextInput
                     label='Observaciones'
                     mode='outlined'
-                    multilinex
+                    multiline
                     style={styles.textInput}
-                    onChangeText={value => setEstudio({...estudio, Observaciones: value})}
+                    onChangeText={value => setResultado({...resultado, Observaciones: value})}
                 />
                 <TextInput
                     label='Estatus'
                     mode='outlined'
                     style={styles.textInput}
-                    onChangeText={value => setEstudio({...estudio, Estatus: value})}
+                    onChangeText={value => setResultado({...resultado, Estatus: value})}
                 />
-                <TextInput
-                    label='Nivel Urgencia'
-                    mode='outlined'
-                    style={styles.textInput}
-                    onChangeText={value => setEstudio({...estudio, Nivel_Urgencia: value})}
-                />
-                <TextInput
-                    label='Costo total'
-                    mode='outlined'
-                    style={styles.textInput}
-                    onChangeText={value => setEstudio({...estudio, Total_Costo: value})}
-                />
-                <TextInput
-                    label='Dirigido a'
-                    mode='outlined'
-                    style={styles.textInput}
-                    onChangeText={value => setEstudio({...estudio, Dirigido_A: value})}
-                />
-                <TextInput
-                    label='Solicitud_Id'
-                    mode='outlined'
-                    style={styles.textInput}
-                    onChangeText={value => setEstudio({...estudio, Solicitud_ID: value})}
-                />
-                <TextInput
-                    label='Consumibles_ID'
-                    mode='outlined'
-                    style={styles.textInput}
-                    onChangeText={value => setEstudio({...estudio, Consumibles_ID: value})}
-                />
+                
                 <Button
                     mode='contained-tonal'
                     style={{marginTop: 5}}
-                    onPress={() => nuevoEstudio()}
+                    onPress={() => nuevoResultado()}
                 >
                     Nuevo Estudio
                 </Button>
@@ -117,7 +112,7 @@ const CreateEstudio = () => {
             >
             <Dialog.Title>Error</Dialog.Title>
             <Dialog.Content>
-                <Text variant='bodyMedium'>Error Tdos los campos son obligatorios</Text>
+                <Text variant='bodyMedium'>Todos los campos son obligatorios</Text>
             </Dialog.Content>
             <Dialog.Actions>
                 <Button onPress={() => setAlert(false)}>Cerrar</Button>
@@ -151,4 +146,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default CreateEstudio
+export default NuevoResultado

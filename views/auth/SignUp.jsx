@@ -1,12 +1,25 @@
 import React from 'react'
-import { View, StyleSheet } from 'react-native'
-import { Text, TextInput, Button, Dialog, Portal } from 'react-native-paper'
+import { View, StyleSheet, Image } from 'react-native'
+import { Text, TextInput, Button, Chip } from 'react-native-paper'
 
 const SignUp = () => {
   return (
     <View style={styles.container}>
         <Text style={styles.title}>Registrate</Text>
         <Text style={styles.subtitle}>Crea una nueva cuenta</Text>
+        <Chip
+          icon={({size, color}) => (
+            <Image
+              source={require('../../src/icons/ayuda.png')}
+              style={{
+                width: size,
+                height: size,
+                tintColor: color,
+              }}
+            />
+          )}
+          style={{marginBottom: 30}}
+        >Para registrarte consulta al area de Registro</Chip>
 
         <TextInput
           style={styles.textInput}
@@ -22,6 +35,12 @@ const SignUp = () => {
 
         <TextInput
           style={styles.textInput}
+          label="Numero de Telefono"
+          mode="outlined"
+        />
+
+        <TextInput
+          style={styles.textInput}
           label="Contraseña"
           mode="outlined"
           secureTextEntry={true}
@@ -30,6 +49,7 @@ const SignUp = () => {
         <Button
           mode="contained"
           style={styles.button}
+          disabled={true}
         >
           Registrar
         </Button>
@@ -51,7 +71,7 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 18,
     fontWeight: '500',
-    marginBottom: 110,
+    marginBottom: 80,
   },
   textInput: {
     marginBottom: 10,

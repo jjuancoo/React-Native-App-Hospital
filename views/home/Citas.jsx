@@ -2,6 +2,11 @@ import React, {useState, useEffect} from 'react'
 import { View, ScrollView, StyleSheet } from 'react-native'
 import { Text, Card, FAB } from 'react-native-paper'
 import useAxios from '../../api/estudios.api'
+<<<<<<< HEAD
+=======
+import LoadingStudios from './Screens/LoadingStudios'
+import { formatearFecha } from '../../components'
+>>>>>>> develop/Juan
 
 const Citas = () => {
 
@@ -29,6 +34,7 @@ const Citas = () => {
         <View>
           <Text style={styles.title}>Estudios</Text>
           <View>
+<<<<<<< HEAD
             {studios.map(studio => (
               <View style={{marginVertical: 6, padding: 2}} key={studio.id}>
                 <Card>
@@ -43,6 +49,57 @@ const Citas = () => {
                 </Card>
               </View>
             ))}
+=======
+            {studios.length === 0 ? (
+              <LoadingStudios />
+            ) : (
+              studios.map(studio => (
+                <View style={{marginVertical: 6, padding: 2}} key={studio.id}>
+                  <TouchableHighlight
+                    onPress={() =>
+                      navigation.navigate('Modals', {id: studio.id})
+                    }
+                    underlayColor="transparent">
+                    <Card>
+                      <Card.Content>
+                        <View
+                          style={{
+                            flexDirection: 'row',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                          }}>
+                          <Text style={styles.titleCard}>{studio.Tipo}</Text>
+                          <IconButton
+                            icon={({size, color}) => (
+                              <Image
+                                source={require('../../src/icons/lapiz.png')}
+                                style={{
+                                  width: size,
+                                  height: size,
+                                  tintColor: color,
+                                }}
+                              />
+                            )}
+                            onPress={() =>
+                              navigation.navigate('EditEstudio', {
+                                id: studio.id,
+                              })
+                            }
+                          />
+                        </View>
+                        <Text>Estado: {studio.Estatus}</Text>
+                        <Text>Costo: {studio.Total_Costo}</Text>
+                        <Text>Dirigido a: {studio.Dirigido_A}</Text>
+                        <Text>Observaciones: {studio.Observaciones}</Text>
+                        <Text>Creada: {formatearFecha(studio.Fecha_Registro)}</Text>
+                        <Text>ID: {studio.id}</Text>
+                      </Card.Content>
+                    </Card>
+                  </TouchableHighlight>
+                </View>
+              ))
+            )}
+>>>>>>> develop/Juan
           </View>
         </View>
       </ScrollView>
